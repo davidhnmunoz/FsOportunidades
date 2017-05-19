@@ -51,7 +51,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../php/direcciones/direcciones.php">
+                                    <a class="nav-link" href="direcciones.php">
                                         Direcciones
                                     </a>
                                 </li>
@@ -72,6 +72,8 @@
                                     <li class="nav-item dropdown">
                                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink">
                                             <?php echo ucwords($_SESSION['usuario']); ?>
+                                            <i aria-hidden="true" class="fa fa-user">
+                                            </i>
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
                                             <a class="dropdown-item" href="../php/index.php">

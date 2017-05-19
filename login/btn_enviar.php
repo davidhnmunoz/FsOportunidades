@@ -1,4 +1,4 @@
   <div class="form-actions">
-         
-     <input type="submit" id="" class=" id button large-button primary"  name="" value="Ingresar" >          
+
+     <input type="submit" id="" class=" id button small-button primary"  name="" value="Ingresar" >
   </div>
