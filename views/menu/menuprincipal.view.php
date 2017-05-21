@@ -22,6 +22,7 @@
         <div class="container">
             <div class="row">
                 <header>
+
                     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
                         <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
                             <span class="navbar-toggler-icon">
@@ -72,8 +73,10 @@
                                     <li class="nav-item dropdown">
                                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownMenuLink">
                                             <?php echo ucwords($_SESSION['usuario']); ?>
-                                            <i aria-hidden="true" class="fa fa-user">
-                                            </i>
+                                            <button class="button helper-button clear">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                        </button>
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
                                             <a class="dropdown-item" href="../php/index.php">

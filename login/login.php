@@ -50,7 +50,7 @@ WHERE u.fecha_alta >= CURDATE() + INTERVAL 90 DAY  ');
                   <span class="">Cargando</span></center><br>';
         } else {
             $_SESSION['intentos'] = $intento;
-            $error .= '<li> Datos incorrectos, vas: ' . $intento . ' intento/s de (' . $permitidos . ')</li>';
+            $error .= '<li>Datos incorrectos, vas: ' . $intento . ' intento/s de (3)</li>';
 
         }
     }

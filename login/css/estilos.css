@@ -8,7 +8,7 @@
 }
 
 .formrobot {
-    width: 500px;
+    width: 520px;
     margin: 100px auto;
     background: #FFFFFF;
     padding: 20px;
@@ -29,9 +29,8 @@
 }
 
 .enviar {
-    background: #00993D;
-    width: 430px;
-    margin: auto;
+    width: 458px;
+    margin: center;
     color: #fff;
     font-size: 25px;
 }

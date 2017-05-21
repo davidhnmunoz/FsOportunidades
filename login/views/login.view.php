@@ -61,16 +61,17 @@
 if (!isset($_SESSION['usuario'])) {
 
     include 'btn_enviar.php';}?>
+
             <?php if (!empty($enviar)): ?>
             </form>
-            <div class="enviar">
+            <div class="enviar bg-success">
                 <?php echo $enviar; ?>
             </div>
             <?php echo $enviado; ?>
             <?php endif;?>
             <?php if (!empty($error)): ?>
-            <div class="panel alert">
-                <div class="heading ">
+            <div class="col-sm-12">
+                <div class="alert alert-danger" role="alert">
                     <?php echo $error ?>
                 </div>
             </div>
