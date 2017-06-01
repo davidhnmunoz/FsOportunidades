@@ -1,0 +1,39 @@
+.formagregar {
+    width: 900px;
+    margin: 100px auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #047CF6;
+}
+
+.editar:hover {
+    color: #F99A05 !important;
+    cursor: pointer
+}
+
+.eliminar:hover {
+    color: #F81010 !important;
+    cursor: pointer
+}
+
+.alta:hover {
+    color: #08C05F;
+    cursor: pointer
+}
+
+.agregar {
+    color: #08C05F;
+}
+
+.editarcuenta {
+    color: #FF9805;
+}
+
+.footerfijo {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+}

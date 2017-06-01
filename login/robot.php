@@ -13,7 +13,7 @@ if (isset($_POST['enviar'])) {
 <span class="sr-only">Loading...</span><br>
                   <span class="form-text text-success"><strong>Cargando</strong></span></center><br>';
     } else {
-        $errores = '<strong>El codigo es Incorrecto</strong>';
+        $errores = '<strong>Codigo Incorrecto: </strong>Intentelo nuevamente ';
     }
 }
 
@@ -76,7 +76,7 @@ echo $ca;?></label>
 	<div class="alert alert-success role alert">
 		<?php echo $aciertos ?>
 	</div>
-	<div class="col-sm-2 offset-3">
+	<div class="col-sm-2 offset-4">
 
 
 		<?php echo $correcto ?>
@@ -85,8 +85,9 @@ echo $ca;?></label>
 </div>
 	<?php if (!empty($errores)): ?>
 <hr class="hr2">
-<div class="col-sm-10 offset-1">
-	<div class="alert alert-danger robotalert " role="alert">
+<div class="col-sm-12">
+	<div class="alert alert-danger robotalert" role="alert">
+
 		<?php echo $errores ?>
 		<?php endif;?>
 

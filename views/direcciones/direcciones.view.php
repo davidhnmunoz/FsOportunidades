@@ -20,10 +20,9 @@ include '../views/menu/menuprincipal.view.php';?>
     <div class="dropdown-menu">
       <?php foreach ($provincias as $rprovincias): {
     }?>
-			 <a class="dropdown-item" >    <?php echo $rprovincias['nombre']; ?></a>
-					        <?php endforeach;?>
+         <a class="dropdown-item" >    <?php echo $rprovincias['nombre']; ?></a>
+                    <?php endforeach;?>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
     </div>
   </li>
   <li class="nav-item">
@@ -36,6 +35,7 @@ include '../views/menu/menuprincipal.view.php';?>
 
 </div>
 </div>
+
 
 
 </body>
