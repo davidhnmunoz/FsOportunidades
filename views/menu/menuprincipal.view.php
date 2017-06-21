@@ -5,7 +5,7 @@
             <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
             <link rel="stylesheet" href="../assets/css/styles.css">
                 <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-                <link rel="stylesheet" type="text/css" href="../assets/css/chosen-bootstrap.css">
+
                     <link href="../assets/css/font-awesome.css" rel="stylesheet">
                         <title>
                         </title>
@@ -16,27 +16,32 @@
     </head>
     <body>
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/functions.js"></script>
-    <script src="../assets/js/inputtest.js"></script>
              <script src="../assets/js/tether.min.js" type="text/javascript">
         </script>
         <script src="../assets/js/bootstrap.min.js" type="text/javascript">
         </script>
 
+    <script src="../assets/js/inputtest.js"></script>
+
+
                 <header>
+<div class="container">
 
                     <nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
                         <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
                             <span class="navbar-toggler-icon">
                             </span>
                         </button>
+
+                            <ul class="navbar-nav"><div>
+
                         <a class="navbar-brand" href="../index.php">
                             HOME
                         </a>
+                            </div>
 
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                            <ul class="navbar-nav">
                             <!-- Cuentas -->
                                     <li class="nav-item dropdown">
 
@@ -122,11 +127,7 @@
                                     </li>
                                 </li>
                                  <!-- Fin Empleados -->
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="direcciones.php">
-                                        Direcciones
-                                    </a>
-                                </li>
+
                                 <li class="nav-item ">
                                     <!-- BUSCAR -->
                                     <form  class="form-inline my-2 my-lg-0">
@@ -167,6 +168,7 @@
                      </ul>
 
                     </nav>
+</div>
                 </header>
 
     </body>

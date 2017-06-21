@@ -2,14 +2,26 @@
 
 <br>
 <br>
+
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nueva Cuenta</h1>
 
 <hr>
 
-
+<div class="offset-10 col-sm-1">
+<a href="../php/index_cuenta.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
+</a>
+</div>
 <form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
-
-
+<div class="form-group row">
+<div class="col-sm-12">
+ <?php if (!empty($enviado)): ?>
+<div class="col-sm-8 offset-2">
+            <div class="alert alert-success">
+            <?php echo $enviado; ?>
+            </div>
+  <?php endif;?>
+</div>
+</div>
 <div class="form-group row">
  <div class="col-sm-1">
   <label  for="inputEmail1"><strong>id:</strong></label>
@@ -60,14 +72,10 @@
 
 <div class="form-group row">
   <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Fax:</strong></label>
-    <input type="text" name="fax" class="form-control" placeholder="Fax">
-  </div>
-  <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Sitio Web:</strong></label>
     <input type="text" name="sitioweb" class="form-control" placeholder="Sitio Web">
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-8">
   <label  for="inputEmail1"><strong>Descripcion:</strong></label>
     <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
   </div>
@@ -293,12 +301,18 @@ $conusu->execute();
         <input type="submit" class="btn btn-outline-success" name="agregar" value="Agregar Cuenta">
       </div>
   </div>
-  <?php if (!empty($enviado)): ?>
+
+  <?php
+/*
+?>
+<?php if (!empty($enviado)): ?>
 <div class="col-sm-8 offset-2">
-            <div class="alert alert-success">
-            <?php echo $enviado; ?>
-            </div>
-  <?php endif;?>
+<div class="alert alert-success">
+<?php echo $enviado; ?>
+</div>
+<?php endif;?>
+ */
+?>
 </form>
 
 
@@ -316,4 +330,6 @@ $conusu->execute();
 
 </body>
 </html>
+
 <?php include '../views/menu/footer.view.php';?>
+<script src="../assets/js/functions.js"></script>

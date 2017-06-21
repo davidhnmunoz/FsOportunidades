@@ -4,10 +4,10 @@ if (!isset($_SESSION['usuario'])) {
 }
 require 'conexion.php';
 
-// $cuentas = $conexion->prepare('SELECT * FROM cuentas ');
-// $cuentas->execute();
-
-$cuentas = $conexion->prepare('SELECT cue.id as "id", con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",cue.nombreempresa  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
+$cuentas = $conexion->prepare('SELECT cue.id as "id", con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",
+cue.nombreempresa ,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono,
+ emp.nombre, emp.apellido,usu.id as "usuario_id",usu.usuario,
+ dir.CodPostal, prov.nombre as "provincia" ,
  dep.nombre as "departamento", loc.nombre as "localidad"
 
 FROM cuentas cue JOIN usuarios usu ON cue.usuario_id=usu.id

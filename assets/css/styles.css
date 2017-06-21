@@ -1,10 +1,24 @@
 .formagregar {
     width: 900px;
-    margin: 100px auto;
+    margin: 1px auto;
     background: #FFFFFF;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #047CF6;
+}
+
+.formod {
+    width: 900px;
+    margin: 1px auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 1px;
+    border: 1px solid #047CF6;
+}
+
+.cancelform {
+    color: red;
+    margin: auto;
 }
 
 .editar:hover {
@@ -36,4 +50,8 @@
     bottom: 0px;
     height: 30px;
     width: 100%;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+    color: #f7f7f9;
 }

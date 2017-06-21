@@ -1,94 +1,149 @@
 <?php require '../views/menu/menuprincipal.view.php';?>
 <hr>
-  <center><h1>CUENTA INDIVIDUAL</h1></center>
+<?php foreach ($rcuentas as $cuentas): ?>
+  <div class="row">
+ <div class="container">
+  <div class="bg-inverse text-white col-sm-8 offset-2">
 
+  <center><h2> <?php echo $cuentas->nombreempresa; ?></h2></center>
+  </div>
 
- <table class="table table-bordered">
+<div class="row">
+  <div class="col-sm-10 offset-2">
+
+ <table  class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
       <tr>
-         <th>Empresa</th>
+
+         <th>Cuit</th>
          <th>Telefono</th>
           <th>Contacto</th>
-         <th>Sitioweb</th>
-         <th>Cuit</th>
+            <th>Sitioweb</th>
           <th>Descripcion</th>
-         <th>Creado Por</th>
-         <th>Direccion</th>
-         <th>Accion</th>
+
       </tr>
   </thead>
 
-<?php foreach ($rcuentas as $cuentas): ?>
+
+
                                 <tbody>
                                     <tr>
-                                        <td><a href="../php/cuenta_individual.php?id=<?php echo $cuentas->id; ?>"><?php echo $cuentas->nombreempresa; ?> </a></td>
+
+                                        <td><?php echo $cuentas->cuit; ?></td>
                                         <td><?php echo $cuentas->telefono; ?></td>
                                         <td><?php echo $cuentas->nombrecontacto; ?>,
                                           <?php echo $cuentas->apellidocontacto; ?>
                                         </td>
-                                        <td><ul><?php echo $cuentas->sitioweb; ?></ul></td>
-                                        <td><?php echo $cuentas->cuit; ?></td>
+                                         <td><?php echo $cuentas->sitioweb; ?></td>
                                         <td><?php echo $cuentas->descripcion ?></td>
-                                        <td><?php echo $cuentas->nombre; ?>
-                                          <?php echo $cuentas->apellido; ?>
-                                        </td>
-                                          <td><?php echo $cuentas->CodPostal ?>,
-                                              <?php echo $cuentas->provincia ?>,
-                                              <?php echo $cuentas->localidad ?>
-                                          </td>
-                                            <td>
-     <a  class="btn btn-outline-warning" name="editar"  href="../php/modificar_cuenta.php?id=<?php echo $cuentas->id; ?>">Editar</a>
-
-    </td>
-
-
                                     </tr>
-                                    </tbody><?php endforeach;?>
-      </table>
+                                    </tbody>
+</table>
+
+</div>
+  </div>
+
+<div class="row">
+  <div class="col-sm-8 offset-2">
+
+<div  class="bg-inverse text-white">
+<h2 align="center">Direccion</h2>
+  </div>
+<table class="table table-bordered table-sm table-responsive">
+
+
+<thead class="thead-inverse">
+
+         <th>Direccion y Cod Postal</th>
+         <th>Provincia</th>
+         <th>Departamento</th>
+        <th>Localidad</th>
+</thead>
+
+                  <tbody>
+                  <tr>
+
+                                          <td><?php echo $cuentas->CodPostal ?></td>
+                                            <td><?php echo $cuentas->provincia ?></td>
+                                            <td><?php echo $cuentas->departamento ?></td>
+                                            <td>   <?php echo $cuentas->localidad ?></td>
+                                  <?php endforeach;?>
+                  </tr>
+                  </tbody>
+</table>
+</div>
+</div>
 
 
 
 
 
-  <table class="table table-bordered">
+
+
+<div  class="bg-inverse text-white col-sm-8 offset-2">
+<h2 align="center">Caracteristicas de la cuenta</h2>
+</div>
+<div class="row">
+  <div class="col-sm-10 offset-2">
+
+  <table class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
       <tr>
 
-        <th>Nombre</th>
+
         <th>Origen</th>
-         <th>propiedades</th>
-         <th>organizacion</th>
+         <th>Propiedades</th>
+         <th>Organizacion</th>
          <th>Cantidad De Empleados</th>
          <th>Sector</th>
-    <th>Accion</th>
+
 
 
 
       </tr>
   </thead>
-
 <?php foreach ($rcuentasin as $cuentasin): ?>
                                 <tbody>
                                     <tr>
-                                        <td><a href="../php/cuenta_individual.php?id=<?php echo $cuentasin->id; ?>"><?php echo $cuentasin->nombreempresa; ?> </a></td>
+
                                         <td><?php echo $cuentasin->origen; ?></td>
                                         <td><?php echo $cuentasin->propiedades; ?></td>
                                         <td><?php echo $cuentasin->organizacion; ?></td>
                                          <td> <?php echo $cuentasin->cantidadempleados; ?></td>
                                         <td><?php echo $cuentasin->sector; ?></td>
 
-                                            <td>
-     <a  class="btn btn-outline-warning" name="editar"  href="../php/modificar_cuenta.php?id=<?php echo $cuentasin->id; ?>">Editar</a>
-<a class="btn btn-outline-danger" name="bajar"  href="../php/bajalogica_cuentas.php?id=<?php echo $cuentasin->id; ?>">Dar de Baja</a>
 
-    </td>
 
 
                                     </tr>
                                     </tbody><?php endforeach;?>
       </table>
+      </div>
+      </div>
+
+      <?php foreach ($rcuentas as $cuentas): ?>
 
 
+
+
+
+<div class="row">
+<div class="col-sm-8 offset-2">
+
+        <div class="d-flex flex-row justify-content-center bg-inverse text-white">
+ <div class="p-2" ><h3>Cuenta Creada Por:</h3></div>
+  <div class="p-2"><h3><?php echo $cuentas->nombre ?> <?php echo $cuentas->apellido ?></h3></div>
+</div>
+
+</div>
+                              <?php endforeach;?>
+</div>
+
+</div>
+</div>
+
+
+<hr>
 
     </body>
     </html>
