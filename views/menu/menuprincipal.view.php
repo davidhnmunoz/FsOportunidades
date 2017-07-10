@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
             <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-            <link rel="stylesheet" href="../assets/css/styles.css">
                 <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="../assets/css/styles.css">
 
                     <link href="../assets/css/font-awesome.css" rel="stylesheet">
                         <title>
@@ -50,15 +50,15 @@
                                             Cuentas
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                            <a class="dropdown-item" href="../php/agregar_cuenta.php">
-                                               Agregar Cuenta
-                                            </a>
-                                            <a class="dropdown-item" href="../php/index_cuenta.php">
-                                                Cuentas Activas
-                                            </a>
-                                            <a class="dropdown-item" href="../php/cuentas_inactivas.php">
-                                                Cuentas Inactivas
-                                            </a>
+                                           <a class="dropdown-item" href="../php/agregar_cuenta.php">
+                                            Agregar Cuenta
+                                        </a>
+                                        <a class="dropdown-item" href="../php/index_cuenta.php">
+                                            Cuentas Activas
+                                        </a>
+                                        <a class="dropdown-item" href="../php/cuentas_inactivas.php">
+                                            Cuentas Inactivas
+                                        </a>
                                         </div>
                                     </li>
                                 </li>
@@ -71,15 +71,15 @@
                                             Contactos
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
-                                               Agregar Contacto
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                Contacto Activos
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                Contacto Inactivos
-                                            </a>
+                                        <a class="dropdown-item" href="../php/agregar_contacto.php">
+                                            Agregar Contacto
+                                        </a>
+                                        <a class="dropdown-item" href="../php/index_contactos.php">
+                                            Contacto Activos
+                                        </a>
+                                        <a class="dropdown-item" href="../php/contactos_inactivos.php">
+                                            Contacto Inactivos
+                                        </a>
                                         </div>
                                     </li>
                                 </li>
@@ -93,15 +93,15 @@
                                             Usuarios
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
-                                               Agregar Usuario
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                Usuarios Activos
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                Usuarios Inactivos
-                                            </a>
+                                             <a class="dropdown-item" href="../php/agregar_usuario.php">
+                                            Agregar Usuario
+                                        </a>
+                                        <a class="dropdown-item" href="../php/index_usuarios.php">
+                                            Usuarios Activos
+                                        </a>
+                                        <a class="dropdown-item" href="../php/usuario_inactivo.php">
+                                            Usuarios Inactivos
+                                        </a>
                                         </div>
                                     </li>
                                 </li>
@@ -131,11 +131,14 @@
                                 <li class="nav-item ">
                                     <!-- BUSCAR -->
                                     <form  class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-1" placeholder="buscar" type="text">
+
+
+
+
 
                                          <div class="input-group-addon"><i class="fa fa-search fa-lg" aria-hidden="true"></i></div>
                                             <button class="btn btn-primary " type="submit">
-                                                Buscar
+                                                Buscar Oportunidad
                                             </button>
                                         </input>
                                     </form>
@@ -157,9 +160,7 @@
                                             <a class="dropdown-item" href="../php/index.php">
                                                 Perfil
                                             </a>
-                                            <a class="dropdown-item" href="#">
-                                                Another action
-                                            </a>
+
                                             <a class="dropdown-item" href="../php/cerrar.php">
                                                 Cerrar Sesión
                                             </a>

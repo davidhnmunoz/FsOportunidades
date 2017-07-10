@@ -1,4 +1,7 @@
-<?php require '../views/menu/menuprincipal.view.php';?>
+
+
+<?php require '../views/menu/menucuenta_activa.view.php';?>
+
 
 <br>
 <br>
@@ -135,6 +138,7 @@ foreach ($rqueryselected as $queryselected): ?>
 
 
 </select>
+
 </div>
 
 <!-- Empieza Departamentos -->
@@ -236,9 +240,9 @@ $rtoricon = $toricon->fetchAll(PDO::FETCH_OBJ);
 <div class="form-group row">
 <div class="col-sm-4">
 <label  for="inputEmail1"><strong>Origen:</strong></label>
-<select class="form-control" id="tiorigen" name="tiorigen">
+<select required class="form-control" id="tiorigen" name="tiorigen">
 
-<option value=""  required="" >Seleccione un origen</option>
+<option value=""  >Seleccione un origen</option>
 <?php foreach ($rtoriedit as $toriedit): ?>
 
 <option selected="selected" value="<?php echo $toriedit->id; ?>" ></a>

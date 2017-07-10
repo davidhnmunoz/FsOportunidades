@@ -1,0 +1,117 @@
+
+
+<?php include '../views/menu/menuusuarios_activos.view.php';?>
+
+<br>
+<br>
+
+
+<h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nuevo Usuario</h1>
+
+<hr>
+
+<div class="offset-10 col-sm-1">
+<a href="../php/index_usuarios.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
+</a>
+</div>
+<form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
+<div class="form-group row">
+<div class="col-sm-12">
+ <?php if (!empty($enviado)): ?>
+<div class="col-sm-8 offset-2">
+            <div class="alert alert-success">
+            <?php echo $enviado; ?>
+            </div>
+  <?php endif;?>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-sm-1">
+  <label  for="inputEmail1"><strong>id:</strong></label>
+    <input required="" type="text" name="id" class="form-control" placeholder="id">
+  </div>
+  <div class="col-sm-3">
+  <label  for="inputEmail1"><strong>Usuario:</strong></label>
+    <input required="" type="text" name="usuario" class="form-control" placeholder="usuario">
+  </div>
+
+<div class="col-sm-3">
+  <label  for="inputEmail1"><strong>Contraseña:</strong></label>
+    <input required="" type="password" name="pass" class="form-control" placeholder="Contraseña">
+  </div>
+
+  <div class="col-sm-4">
+  <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
+    <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo date("Y-m-d"); ?>" >
+  </div>
+
+  <div class="col-sm-3">
+
+  <?php $srol = $conexion->prepare("SELECT trol.id,trol.descripcion
+
+FROM
+tipos_roles trol");
+$srol->execute();
+$rsrol = $srol->fetchAll(PDO::FETCH_OBJ);
+?>
+
+<label  for="inputEmail1"><strong>Rol</strong></label>
+
+<select required class="form-control" name="rol" id="rol">
+
+<option value="">Elija Rol </option>
+<?php foreach ($rsrol as $srol): ?>
+<option value="<?php echo $srol->id ?>" >
+
+<?php echo $srol->descripcion ?></option>
+
+<?php endforeach;?>
+
+
+
+
+
+</select>
+  </div>
+
+</div>
+<!-- Errores id empieza -->
+<div class="form-group row">
+<?php if (!empty($errorid)): ?>
+            <div class="col-sm-3 ">
+                <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+                    <?php echo $errorid ?>
+                </div>
+            </div>
+            <?php endif;?>
+        </div>
+</div>
+<div class="form-group row">
+      <div class="offset-sm-5 col-sm-8">
+        <input type="submit" class="btn btn-outline-success" name="agregar" value="Agregar Usuario">
+      </div>
+  </div>
+
+
+</form>
+
+
+            <?php if (!empty($enviar)): ?>
+            <div class="enviar bg-success">
+                <?php echo $enviar; ?>
+            </div>
+
+            <?php endif;?>
+            </div>
+
+
+
+<hr>
+
+</body>
+</html>
+
+<?php include '../views/menu/footer.view.php';?>

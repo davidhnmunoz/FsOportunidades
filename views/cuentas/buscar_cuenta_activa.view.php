@@ -1,4 +1,5 @@
 
+
 <?php if (!empty($sinresultado)): ?>
   <hr>
             <div class="col-sm-4 offset-3">
@@ -16,15 +17,15 @@
   <center><h2>Resultado De Busqueda:</h2></center>
 
 
- <div class="col-sm-8 offset-4">
+ <div class="col-sm-10 offset-1">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
-         <th>Nombre</th>
+         <th>Empresa</th>
+         <th>Cuit</th>
+         <th>Telefono</th>
 
-         <th>Rol</th>
-
-         <th>Fecha De alta</th>
+         <th>Sitioweb</th>
 
 
 
@@ -38,22 +39,21 @@
       <?php foreach ($result as $row): ?>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $row['usuario']; ?>
-                                        <td><?php echo $row['rol']; ?></td>
-                                        <td><?php echo $row['fecha_alta']; ?></td>
+                                        <td><a href="../php/cuenta_individual.php?id=<?php echo $row['id']; ?>"><?php echo $row['nombreempresa']; ?> </a></td>
+                                        <td><?php echo $row['cuit']; ?></td>
+                                        <td><?php echo $row['telefono']; ?></td>
 
-
-
+                                        <td><?php echo $row['sitioweb']; ?></td>
 
 
                                             <td>
-      <a href="../php/modificar_usuario.php?id=<?php echo $row['id'] ?>">
+      <a href="../php/modificar_cuenta.php?id=<?php echo $row['id'] ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
     <td>
 
-      <a  href="../php/bajalogica_usuario.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea Dar el usuario?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
+      <a  href="../php/bajalogica_cuentas.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea Dar de baja la cuenta?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
     </td>
 
 

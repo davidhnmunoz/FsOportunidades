@@ -44,31 +44,30 @@ CREATE TABLE IF NOT EXISTS `contactos` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `cuenta_id` int(255) DEFAULT '0',
   `usuario_id` int(255) NOT NULL DEFAULT '0',
-  `direccion_id` int(255) DEFAULT '0',
   `nombre` varchar(50) NOT NULL DEFAULT '0',
   `apellido` varchar(50) NOT NULL DEFAULT '0',
   `email` varchar(50) NOT NULL DEFAULT '0',
-  `telefonotrabajo` varchar(250) DEFAULT '0',
-  `telefonomovil` varchar(250) DEFAULT '0',
+  `telefono` varchar(250) DEFAULT '0',
+  `estado` int(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `IdUsuario` (`usuario_id`),
   KEY `IdCuenta` (`cuenta_id`),
-  KEY `IdCiudad` (`direccion_id`),
   CONSTRAINT `FK_contactos_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_contactos_direcciones` FOREIGN KEY (`direccion_id`) REFERENCES `direcciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_contactos_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.contactos: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.contactos: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `contactos` DISABLE KEYS */;
-INSERT INTO `contactos` (`id`, `cuenta_id`, `usuario_id`, `direccion_id`, `nombre`, `apellido`, `email`, `telefonotrabajo`, `telefonomovil`) VALUES
-	(2, 2, 5, 11, 'Marcela', 'Castelo', 'mcastelo@asociart.com.ar', '1143177400 Int. 1446\r', ''),
-	(5, 5, 5, 13, 'Nicolas', 'Galeano', 'ngaleano@bolcomsf.com.ar', '0342-4554734 Int 120 \r', ''),
-	(6, 6, 3, 14, 'Natalia', 'Olivieri', 'Natalia_Olivieri@cargill.com', '011 43177000 int. 6622\r', ''),
-	(8, 8, 5, 16, 'FRANCO', 'ANDROETTO', 'sistemas@fronteraliving.com', '3564431130/430984 (INT 109)\r', ''),
-	(16, 2, 5, 11, 'Gregorio', 'Torlaschi', 'gtorlaschi@asociart.com.ar', '(011) 4317-7400 - Int. 386', '0'),
-	(17, 16, 3, 23, 'Agustina', ' Rayes', 'agustinareyes@natura.net', '123', '0'),
-	(18, 17, 3, 24, 'Gloria', 'Bellocq', 'gbellocq@jugoscitric.com', '011 1541565293', '0');
+INSERT INTO `contactos` (`id`, `cuenta_id`, `usuario_id`, `nombre`, `apellido`, `email`, `telefono`, `estado`) VALUES
+	(2, 2, 5, 'Marcela', 'Castelo', 'mcastelo@asociart.com.ar', '1143177400 Int. 1446\r', 1),
+	(5, 5, 5, 'Nicolas', 'Galeano', 'ngaleano@bolcomsf.com.ar', '0342-4554734 Int 120 \r', 1),
+	(6, 6, 3, 'Natalia', 'Olivieri', 'Natalia_Olivieri@cargill.com', '011 43177000 int. 6622\r', 1),
+	(8, 8, 5, 'FRANCO', 'ANDROETTO', 'sistemas@fronteraliving.com', '3564431130/430984 (INT 109)\r', 1),
+	(16, 2, 5, 'Gregorio', 'Torlaschi', 'gtorlaschi@asociart.com.ar', '(011) 4317-7400 - Int. 386', 1),
+	(17, 16, 3, 'Agustina', ' Rayes', 'agustinareyes@natura.net', '123', 1),
+	(18, 17, 3, 'Gloria', 'Bellocq', 'gbellocq@jugoscitric.com', '011 1541565293', 1),
+	(19, 15, 4, 'Ariel', 'Vistalli', 'avistalli@grupoprominente.com', '+54 351 561 1000 int. 9581', 1),
+	(21, 5, 3, 'bataraza', 'conqueso', 'bataraza@conqueso.com.ar', '3414476072', 0);
 /*!40000 ALTER TABLE `contactos` ENABLE KEYS */;
 
 
@@ -77,10 +76,9 @@ CREATE TABLE IF NOT EXISTS `cuentas` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(255) DEFAULT '1',
   `direccion_id` int(255) DEFAULT NULL,
-  `cuit` bigint(11) NOT NULL DEFAULT '0',
+  `cuit` varchar(11) NOT NULL DEFAULT '0',
   `nombreempresa` varchar(250) NOT NULL DEFAULT '0',
   `telefono` varchar(50) NOT NULL DEFAULT '0',
-  `fax` varchar(50) DEFAULT '0',
   `sitioweb` varchar(50) DEFAULT '0',
   `estado` int(1) NOT NULL DEFAULT '0',
   `descripcion` varchar(250) DEFAULT '0',
@@ -94,14 +92,14 @@ CREATE TABLE IF NOT EXISTS `cuentas` (
 
 -- Volcando datos para la tabla fsoportunidades.cuentas: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `cuentas` DISABLE KEYS */;
-INSERT INTO `cuentas` (`id`, `usuario_id`, `direccion_id`, `cuit`, `nombreempresa`, `telefono`, `fax`, `sitioweb`, `estado`, `descripcion`) VALUES
-	(2, 5, 11, 30708107960, 'Asociart', '1143177400 Int. 1446', '', 'www.asociart.com.ar', 0, ' ASEGURADORA DE RIESGOS DEL TRABAJ'),
-	(5, 5, 13, 30566275232, 'BOLSA DE COMERCIO DE SANTA FE', '342 4554734', '34156567123', 'www.bcsf.com.ar', 1, ''),
-	(6, 3, 14, 30506792165, 'CARGILL S. A. COMERCIAL E INDUSTRIAL', '011 4317-7000', '', 'www.cargill.com.ar', 1, ''),
-	(8, 5, 16, 30707884300, 'FRONTERA LIVING S.A', '3564 431130', '', 'http://www.fronteraliving.com/', 1, 'VENTA AL POR MAYOR EN COMISIÓN O CONSIGNACIÓN DE M'),
-	(15, 6, 22, 30615633042, 'PROMINENTE S.A.', '11 6091 0000', '0', 'http://www.grupoprominente.com/', 0, '0'),
-	(16, 3, 23, 30677757295, 'NaturaCosmeticos', '11 4756 9300', '0', 'www.naturacosmeticos.com.ar', 1, 'Empresa de cosmeticos'),
-	(17, 3, 24, 30567952246, 'Jugos Citric', '1142016415', '0', 'www.jugoscitric.com.ar', 1, 'Empresa de Jugos');
+INSERT INTO `cuentas` (`id`, `usuario_id`, `direccion_id`, `cuit`, `nombreempresa`, `telefono`, `sitioweb`, `estado`, `descripcion`) VALUES
+	(2, 5, 11, '30686273330', 'Asociart', '1143177400 Int. 1446', 'www.asociart.com.ar', 1, ' ASEGURADORA DE RIESGOS DEL TRABAJO'),
+	(5, 3, 13, '30566275232', 'BOLSA DE COMERCIO DE SANTA FE                                                                                                             ', '342 4554734                                      ', 'www.bcsf.com.ar                          ', 1, 'Ente de Inversión de fondos '),
+	(6, 3, 14, '30506792165', 'CARGILL S. A. COMERCIAL E INDUSTRIAL            ', '011 4317-7000            ', 'www.cargill.com.ar            ', 1, 'Comercializacion de Cereales'),
+	(8, 5, 16, '30707884300', 'FRONTERA LIVING S.A', '3564 431130', 'http://www.fronteraliving.com/', 1, 'VENTA AL POR MAYOR EN COMISIÓN O CONSIGNACIÓN DE M'),
+	(15, 6, 22, '33620499779', 'PROMINENTE S.A.', '11 6091 0000', 'http://www.grupoprominente.com', 0, 'Empresa de TI'),
+	(16, 3, 23, '30714172960', 'NaturaCosmeticos', '11 4756 9300', 'www.naturacosmeticos.com.ar', 1, 'Empresa de cosmeticos'),
+	(17, 3, 24, '30670873389', 'Jugos Citric', '1142016415', 'www.jugoscitric.com.ar', 1, 'Empresa de Jugos');
 /*!40000 ALTER TABLE `cuentas` ENABLE KEYS */;
 
 
@@ -573,7 +571,7 @@ INSERT INTO `departamentos` (`id`, `nombre`, `provincia_id`) VALUES
 	(453, 'GENERAL LOPEZ\r', 21),
 	(454, 'GENERAL OBLIGADO\r', 21),
 	(455, 'IRIONDO\r', 21),
-	(456, 'LA CAPITAL\r', 21),
+	(456, 'SANTA FE\r\r', 21),
 	(457, 'LAS COLONIAS\r', 21),
 	(458, 'ROSARIO\r', 21),
 	(459, 'SAN CRISTOBAL\r', 21),
@@ -648,15 +646,15 @@ CREATE TABLE IF NOT EXISTS `direcciones` (
   CONSTRAINT `FK_direccion_departamentos` FOREIGN KEY (`departamento_id`) REFERENCES `departamentos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_direccion_localidades` FOREIGN KEY (`localidad_id`) REFERENCES `localidades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_direccion_provincias` FOREIGN KEY (`provincia_id`) REFERENCES `provincias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=444 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.direcciones: ~14 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.direcciones: ~16 rows (aproximadamente)
 /*!40000 ALTER TABLE `direcciones` DISABLE KEYS */;
 INSERT INTO `direcciones` (`id`, `provincia_id`, `departamento_id`, `localidad_id`, `CodPostal`) VALUES
-	(11, 2, 135, 2123, 'AVENIDA L N ALEM 621 C1001AAB\r'),
-	(13, 1, 135, 2123, 'CALLE GRAL SAN MARTIN 2231 S3000FRW\r'),
-	(14, 2, 135, 2123, 'AVENIDA L N ALEM 928 C1001AAR piso 9\r'),
-	(16, 6, 193, 193, 'CALLE SAN FRANCISCO 1435 X5012CSI\r'),
+	(11, 2, 135, 2123, 'AVENIDA L N ALEM 621 C1001AAB'),
+	(13, 21, 456, 17794, 'CALLE GRAL SAN MARTIN 2231 S3000FRW'),
+	(14, 2, 135, 2123, 'AVENIDA L N ALEM 928 C1001AAR piso 9'),
+	(16, 6, 193, NULL, 'CALLE SAN FRANCISCO 1435 X5012CSI'),
 	(22, 6, 193, 4226, 'CALLE CNEL MANUEL BAIGORRIA 653 X5016AAM'),
 	(23, 1, 131, 2055, 'CALLE CAZADORES DE COQUIMBO 2860 B1605AZF 2º piso'),
 	(24, 2, 135, 2123, 'CALLE ITALIA 393 B1870COI'),
@@ -666,7 +664,10 @@ INSERT INTO `direcciones` (`id`, `provincia_id`, `departamento_id`, `localidad_i
 	(32, 21, 458, 17902, 'CALLE SAN JUAN 1563 S2000BDY'),
 	(33, 21, 458, 17902, 'CALLE ESTANISLAO ZEBALLOS 1322 S2000BQB'),
 	(34, 21, 458, 17902, 'CALLE RIOJA 1455 S2000AYU'),
-	(35, 21, 458, 17902, 'CALLE GRAL SAN MARTIN 2202 S2000FTL');
+	(35, 21, 458, 17902, 'CALLE GRAL SAN MARTIN 2202 S2000FTL'),
+	(123, 16, 387, 13714, 'asdasd'),
+	(344, 17, 406, 14557, 'sadasdasd'),
+	(443, 17, 405, 14475, 'asdasdasd');
 /*!40000 ALTER TABLE `direcciones` ENABLE KEYS */;
 
 
@@ -23728,15 +23729,17 @@ CREATE TABLE IF NOT EXISTS `numeroempleados` (
   KEY `IdDetalleNumeroEmpleados` (`tiponumeroempleados_id`),
   CONSTRAINT `FK_numeroempleados_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_numeroempleados_tiposnumeroempleados` FOREIGN KEY (`tiponumeroempleados_id`) REFERENCES `tipos_numerosempleados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.numeroempleados: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.numeroempleados: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `numeroempleados` DISABLE KEYS */;
 INSERT INTO `numeroempleados` (`id`, `cuenta_id`, `tiponumeroempleados_id`) VALUES
 	(1, 2, 3),
-	(4, 5, 3),
+	(4, 5, 4),
 	(5, 6, 3),
-	(7, 8, 3);
+	(7, 8, 3),
+	(14, 17, 3),
+	(15, 15, 3);
 /*!40000 ALTER TABLE `numeroempleados` ENABLE KEYS */;
 
 
@@ -23789,15 +23792,17 @@ CREATE TABLE IF NOT EXISTS `organizaciones` (
   KEY `IdTipoOrganizacion` (`tipoorganizacion_id`),
   CONSTRAINT `FK_organizaciones_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_organizaciones_tiposorganizaciones` FOREIGN KEY (`tipoorganizacion_id`) REFERENCES `tipos_organizaciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.organizaciones: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.organizaciones: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `organizaciones` DISABLE KEYS */;
 INSERT INTO `organizaciones` (`id`, `cuenta_id`, `tipoorganizacion_id`) VALUES
 	(1, 2, 1),
-	(4, 5, 5),
+	(4, 5, 4),
 	(5, 6, 4),
-	(7, 8, 4);
+	(7, 8, 4),
+	(13, 17, 1),
+	(14, 15, 4);
 /*!40000 ALTER TABLE `organizaciones` ENABLE KEYS */;
 
 
@@ -23805,21 +23810,23 @@ INSERT INTO `organizaciones` (`id`, `cuenta_id`, `tipoorganizacion_id`) VALUES
 CREATE TABLE IF NOT EXISTS `origenes` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `cuenta_id` int(255) NOT NULL,
-  `tipoorigen_id` int(255) DEFAULT NULL,
+  `tipoorigen_id` int(255),
   PRIMARY KEY (`id`),
   KEY `IdCuenta` (`cuenta_id`),
   KEY `IdTipoOrigen` (`tipoorigen_id`),
   CONSTRAINT `FK_origenes_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_origenes_tiposorigenes` FOREIGN KEY (`tipoorigen_id`) REFERENCES `tipos_origenes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.origenes: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.origenes: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `origenes` DISABLE KEYS */;
 INSERT INTO `origenes` (`id`, `cuenta_id`, `tipoorigen_id`) VALUES
 	(2, 2, 3),
-	(5, 5, 4),
+	(5, 5, 1),
 	(6, 6, 2),
-	(8, 8, 1);
+	(8, 8, 1),
+	(14, 17, 4),
+	(15, 15, 3);
 /*!40000 ALTER TABLE `origenes` ENABLE KEYS */;
 
 
@@ -23850,15 +23857,17 @@ CREATE TABLE IF NOT EXISTS `propiedades` (
   KEY `IdTipoPropiedad` (`tipopropiedad_id`),
   CONSTRAINT `FK_Propiedades_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_propiedades_tipospropiedades` FOREIGN KEY (`tipopropiedad_id`) REFERENCES `tipos_propiedades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.propiedades: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.propiedades: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `propiedades` DISABLE KEYS */;
 INSERT INTO `propiedades` (`id`, `cuenta_id`, `tipopropiedad_id`) VALUES
 	(2, 2, 1),
-	(5, 5, 4),
+	(5, 5, 3),
 	(6, 6, 1),
-	(7, 8, 3);
+	(7, 8, 3),
+	(13, 17, 3),
+	(14, 15, 1);
 /*!40000 ALTER TABLE `propiedades` ENABLE KEYS */;
 
 
@@ -23899,6 +23908,31 @@ INSERT INTO `provincias` (`id`, `nombre`) VALUES
 /*!40000 ALTER TABLE `provincias` ENABLE KEYS */;
 
 
+-- Volcando estructura para tabla fsoportunidades.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int(1) NOT NULL,
+  `usuario_id` int(255) NOT NULL,
+  `tiposroles_id` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`usuario_id`),
+  KEY `tiposroles_id` (`tiposroles_id`),
+  CONSTRAINT `FK_roles_tipos_roles` FOREIGN KEY (`tiposroles_id`) REFERENCES `tipos_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_roles_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla fsoportunidades.roles: ~6 rows (aproximadamente)
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` (`id`, `usuario_id`, `tiposroles_id`) VALUES
+	(0, 13, 2),
+	(1, 1, 1),
+	(2, 2, 2),
+	(3, 3, 2),
+	(4, 4, 2),
+	(5, 5, 2),
+	(6, 6, 2);
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+
+
 -- Volcando estructura para tabla fsoportunidades.sectores
 CREATE TABLE IF NOT EXISTS `sectores` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
@@ -23909,15 +23943,17 @@ CREATE TABLE IF NOT EXISTS `sectores` (
   KEY `IdTipoSector` (`tiposector_id`),
   CONSTRAINT `FK_sectores_cuentas` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_sectores_tipossectores` FOREIGN KEY (`tiposector_id`) REFERENCES `tipos_sectores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.sectores: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.sectores: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `sectores` DISABLE KEYS */;
 INSERT INTO `sectores` (`id`, `cuenta_id`, `tiposector_id`) VALUES
-	(3, 2, 8),
-	(10, 5, 12),
+	(3, 2, 13),
+	(10, 5, 8),
 	(11, 6, 1),
-	(16, 8, 8);
+	(16, 8, 8),
+	(23, 17, 6),
+	(24, 15, 10);
 /*!40000 ALTER TABLE `sectores` ENABLE KEYS */;
 
 
@@ -24065,6 +24101,21 @@ INSERT INTO `tipos_propiedades` (`id`, `descripcion`) VALUES
 /*!40000 ALTER TABLE `tipos_propiedades` ENABLE KEYS */;
 
 
+-- Volcando estructura para tabla fsoportunidades.tipos_roles
+CREATE TABLE IF NOT EXISTS `tipos_roles` (
+  `id` int(1) NOT NULL,
+  `descripcion` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla fsoportunidades.tipos_roles: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `tipos_roles` DISABLE KEYS */;
+INSERT INTO `tipos_roles` (`id`, `descripcion`) VALUES
+	(1, 'Administrador'),
+	(2, 'Usuario');
+/*!40000 ALTER TABLE `tipos_roles` ENABLE KEYS */;
+
+
 -- Volcando estructura para tabla fsoportunidades.tipos_sectores
 CREATE TABLE IF NOT EXISTS `tipos_sectores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -24112,21 +24163,23 @@ INSERT INTO `tipos_tiemposcompras` (`id`, `descripcion`) VALUES
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) NOT NULL DEFAULT '0',
-  `rol` varchar(50) NOT NULL DEFAULT '0',
   `pass` varchar(8) NOT NULL DEFAULT '0',
   `fecha_alta` date DEFAULT '0000-00-00',
+  `estado` int(1) DEFAULT NULL,
+  `fecha_baja` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.usuarios: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.usuarios: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` (`id`, `usuario`, `rol`, `pass`, `fecha_alta`) VALUES
-	(1, 'admin', 'Role_Admin', '1234', '2016-01-12'),
-	(2, 'irios', 'Role_User', '1234', '2016-01-01'),
-	(3, 'ygianola', 'Role_User', '1234', '2016-01-01'),
-	(4, 'jbianchi', 'Role_User', '1234', '2016-01-01'),
-	(5, 'rcajal', 'Role_User', '1234', '2016-01-01'),
-	(6, 'jbrandi', 'Role_User', '1234', '2016-01-01');
+INSERT INTO `usuarios` (`id`, `usuario`, `pass`, `fecha_alta`, `estado`, `fecha_baja`) VALUES
+	(1, 'admin', '1234', '2014-10-10', 1, NULL),
+	(2, 'irios', '1234', '2015-02-01', 1, '0000-00-00'),
+	(3, 'ygianola', '1234', '2015-02-01', 1, NULL),
+	(4, 'jbianchi', '1234', '2016-08-08', 1, NULL),
+	(5, 'rcajal', '1234', '2015-02-01', 0, '2016-07-10'),
+	(6, 'jbrandi', '1234', '2015-01-01', 1, '0000-00-00'),
+	(13, 'batareto', 'abc123', '2017-07-10', 0, '2017-07-10');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 

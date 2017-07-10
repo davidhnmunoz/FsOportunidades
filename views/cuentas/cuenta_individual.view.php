@@ -1,4 +1,4 @@
-<?php require '../views/menu/menuprincipal.view.php';?>
+<?php require '../views/menu/menucuenta_activa.view.php';?>
 <hr>
 <?php foreach ($rcuentas as $cuentas): ?>
   <div class="row">
@@ -19,10 +19,11 @@
          <th>Telefono</th>
           <th>Contacto</th>
             <th>Sitioweb</th>
-          <th>Descripcion</th>
+            <th>Accion</th>
 
       </tr>
   </thead>
+
 
 
 
@@ -35,11 +36,30 @@
                                           <?php echo $cuentas->apellidocontacto; ?>
                                         </td>
                                          <td><?php echo $cuentas->sitioweb; ?></td>
-                                        <td><?php echo $cuentas->descripcion ?></td>
+                                                                               <td>
+      <a href="../php/modificar_cuenta.php?id=<?php echo $cuentas->id ?>">
+
+      <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+    </td>
                                     </tr>
                                     </tbody>
 </table>
+  <table  class="table table-bordered table-sm table-responsive">
+  <thead class="thead-inverse">
+          <tr>
+          <th>Descripcion
+          </th>
 
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr>
+             <td><?php echo $cuentas->descripcion ?></td>
+          </tr>
+          </tbody>
+
+</table>
 </div>
   </div>
 

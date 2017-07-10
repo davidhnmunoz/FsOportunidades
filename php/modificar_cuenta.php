@@ -84,10 +84,13 @@ if (isset($_POST['modificar'])) {
             /*Actualizar a la tabla Origenes
              */
 
+            var_dump($tiorigen);
             $statment   = "UPDATE origenes SET tipoorigen_id=:tiorigen WHERE cuenta_id=$idUsu";
             $resultado1 = $conexion->prepare($statment);
             $resultado1->execute(array(
                 ":tiorigen" => $tiorigen));
+            var_dump($tiorigen);
+
 /*Actualizar la tabla Propiedades
  */
             $statment1  = "UPDATE propiedades SET tipopropiedad_id=:tiprop WHERE cuenta_id=$idUsu";

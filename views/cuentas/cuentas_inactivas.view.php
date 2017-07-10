@@ -1,4 +1,4 @@
-<?php require '../views/menu/menuprincipal.view.php';?>
+<?php require '../views/menu/menucuenta_inactiva.view.php';?>
 <hr>
 <div class="row">
 <div class="container">
@@ -37,7 +37,7 @@
 </td>
 <td>
 
-<a  href="../php/eliminar_cuenta.php?id=<?php echo $cuentasin->id; ?>"onclick="return confirm('¿Desea Eliminar Cuenta?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+<a  href="../php/eliminar_cuenta.php?id=<?php echo $cuentasin->id; ?>"onclick="return confirm('¿Desea eliminar la cuenta y todos sus contactos Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
 </td>
 
 

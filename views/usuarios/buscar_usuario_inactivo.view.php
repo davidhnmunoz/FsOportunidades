@@ -1,4 +1,3 @@
-
 <?php if (!empty($sinresultado)): ?>
   <hr>
             <div class="col-sm-4 offset-3">
@@ -26,9 +25,9 @@
 
          <th>Fecha De alta</th>
 
+          <th>Fecha De baja</th>
 
-
-         <th colspan="2">Accion</th>
+         <th colspan="3">Accion</th>
       </tr>
       </thead>
 
@@ -41,20 +40,25 @@
                                         <td><?php echo $row['usuario']; ?>
                                         <td><?php echo $row['rol']; ?></td>
                                         <td><?php echo $row['fecha_alta']; ?></td>
+                                        <td><?php echo $row['fecha_baja']; ?></td>
+
 
 
 
 
 
                                             <td>
-      <a href="../php/modificar_usuario.php?id=<?php echo $row['id'] ?>">
+      <a href="../php/modificar_usuario.php?id=<?php echo $row['id']; ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
     <td>
 
-      <a  href="../php/bajalogica_usuario.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea Dar el usuario?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
-    </td>
+    <a   href="../php/alta_usuario.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea Dar de Alta el usuario?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
+</td>
+<td>
+<a  href="../php/eliminar_usuarios.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea eliminar el usuario Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+</td>
 
 
 
