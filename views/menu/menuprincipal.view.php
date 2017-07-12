@@ -114,10 +114,10 @@
                                             Empleados
                                         </a>
                                         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
+                                            <a class="dropdown-item" href="../php/agregar_empleado.php">
                                                Agregar Empleado
                                             </a>
-                                            <a class="dropdown-item" href="">
+                                            <a class="dropdown-item" href="../php/index_empleados.php">
                                                 Empleados Activos
                                             </a>
                                             <a class="dropdown-item" href="">

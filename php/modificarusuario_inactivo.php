@@ -34,13 +34,13 @@ if (isset($_POST['modificar'])) {
         ":fecha_baja" => $fecha_baja));
 
     /*update A Tabla Roles*/
-    $sql       = "UPDATE roles SET rol=:rol, usuario_id =:idUsu  WHERE usuario_id=:idUsu";
+    $sql       = "UPDATE roles SET tiposroles_id=:rol, usuario_id =:idUsu  WHERE usuario_id=:idUsu";
     $resultado = $conexion->prepare($sql);
     $resultado->execute(array(
-        ":rol"     => $rol,
-        ":usuario" => $usuario));
+        ":rol"   => $rol,
+        ":idUsu" => $idUsu));
 
     header('location:index_usuarios.php?exito');
 
 }
-include '../views/usuarios/modificar_usuario.view.php';
+include '../views/usuarios/modificarusuario_inactivo.view.php';

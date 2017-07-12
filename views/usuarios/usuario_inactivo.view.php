@@ -49,7 +49,7 @@
 
 
                                             <td>
-      <a href="../php/modificar_usuario.php?id=<?php echo $usuarios->id ?>">
+      <a href="../php/modificarusuario_inactivo.php?id=<?php echo $usuarios->id ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
