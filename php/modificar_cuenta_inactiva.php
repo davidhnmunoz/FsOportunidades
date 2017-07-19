@@ -30,6 +30,7 @@ if (isset($_POST['modificar'])) {
     $descripcion   = $_POST["descripcion"];
     $usuario_id    = $_POST["usuario_id"];
     $fecha_alta    = $_POST["fecha_alta"];
+    $fecha_baja    = $_POST["fecha_baja"];
     /*Valor hacia  la tabla Origenes*/
     $tiorigen = $_POST["tiorigen"];
 /*Valor hacia  la tabla Propiedades*/
@@ -61,7 +62,8 @@ if (isset($_POST['modificar'])) {
             header('location:repe.php');
         } else {
 
-            $sql       = "UPDATE cuentas SET nombreempresa=:nombreempresa , telefono=:telefono ,sitioweb=:sitioweb, cuit=:cuit,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta  WHERE id=:idUsu";
+            $sql = "UPDATE cuentas SET nombreempresa=:nombreempresa , telefono=:telefono ,sitioweb=:sitioweb, cuit=:cuit,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta,fecha_baja=:fecha_baja
+              WHERE id=:idUsu";
             $resultado = $conexion->prepare($sql);
             $resultado->execute(array(
                 ":idUsu"         => $idUsu,
@@ -72,7 +74,8 @@ if (isset($_POST['modificar'])) {
                 ":descripcion"   => $descripcion,
                 ":direccion_id"  => $direccion_id,
                 ":usuario_id"    => $usuario_id,
-                ":fecha_alta"    => $fecha_alta));
+                ":fecha_alta"    => $fecha_alta,
+                ":fecha_baja"    => $fecha_baja));
             /*Insert a tabla direcciones
              */
 
@@ -132,4 +135,4 @@ if (isset($_POST['modificar'])) {
 
 }
 
-require '../views/cuentas/modificar_cuenta.view.php';
+require '../views/cuentas/modificar_cuenta_inactiva.view.php';

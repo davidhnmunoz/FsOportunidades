@@ -1,6 +1,6 @@
 
 
-<?php require '../views/menu/menucuenta_activa.view.php';?>
+<?php require '../views/menu/menucuenta_inactiva.view.php';?>
 
 
 <br>
@@ -507,6 +507,10 @@ $rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
 <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
     <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo $key->fecha_alta; ?>"  >
+  </div>
+  <div class="col-sm-3">
+  <label  for="inputEmail1"><strong>Fecha De baja:</strong></label>
+    <input required="" type="date"  name="fecha_baja" class="form-control" value="<?php echo $key->fecha_baja; ?>"  >
   </div>
     <?php endforeach;?>
 </div>

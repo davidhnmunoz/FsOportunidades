@@ -28,7 +28,6 @@
       <tr>
          <th>Empresa</th>
          <th>Telefono</th>
-
          <th>Sitioweb</th>
          <th>Cuit</th>
 

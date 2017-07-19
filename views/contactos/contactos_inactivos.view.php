@@ -22,7 +22,7 @@ require '../views/menu/menucontactos_inactivo.view.php';
  <div class="row">
 <div class="container" >
 
- <div class="col-sm-10 offset-1">
+ <div class="col-sm-10 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
@@ -31,7 +31,7 @@ require '../views/menu/menucontactos_inactivo.view.php';
          <th>Telefono</th>
 
 
-         <th colspan="2">Accion</th>
+         <th colspan="3">Accion</th>
       </tr>
       </thead>
 
@@ -57,7 +57,10 @@ require '../views/menu/menucontactos_inactivo.view.php';
 
     <a   href="../php/alta_contactos.php?id=<?php echo $contactos->id ?>"onclick="return confirm('¿Desea Dar de Alta el contacto?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
 </td>
+<td>
 
+<a  href="../php/eliminar_contacto.php?id=<?php echo $contactos->id; ?>"onclick="return confirm('¿Desea eliminar  contacto Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+</td>
 
 
                                     </tr>

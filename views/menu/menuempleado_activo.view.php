@@ -110,7 +110,7 @@
                                           <a class="dropdown-item" href="../php/index_empleados.php">
                                                 Empleados Activos
                                             </a>
-                                            <a class="dropdown-item" href="p">
+                                            <a class="dropdown-item" href="../php/empleado_inactivo.php">
                                                 Empleados Inactivos
                                             </a>
                                     </div>
@@ -126,7 +126,7 @@
                                             </i>
                                         </a>
                                     </div>
-                                    <a class="btn btn-primary" href="../php/busqueda_usuario_activo.ajax.php" name="buscar">
+                                    <a class="btn btn-primary" href="../php/busqueda_empleado_activo.ajax.php" name="buscar">
                                         Buscar Empleados
                                     </a>
                                 </form>

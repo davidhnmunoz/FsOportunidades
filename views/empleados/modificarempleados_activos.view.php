@@ -5,6 +5,7 @@
 <br>
 <br>
 
+
 <h1 align="center"><i class="editarcuenta fa fa-pencil-square-o fa-lg" aria-hidden="true">&nbsp;</i>Modificar empleado</h1>
 
 
@@ -25,11 +26,11 @@
   <label  for="inputEmail1"><strong>Apellido :</strong></label>
     <input required="" type="text" name="apellido" class="form-control" placeholder="apellido" value="<?php echo $key->apellido ?>">
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Cargo:</strong></label>
     <input required="" type="text" name="cargo" class="form-control" placeholder="cargo" value="<?php echo $key->cargo ?>">
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Formacion:</strong></label>
     <input required="" type="text" name="notas" class="form-control" placeholder="formacion" value="<?php echo $key->notas ?>" >
   </div>
@@ -49,11 +50,23 @@
   <label  for="inputEmail1"><strong>Interno:</strong></label>
     <input required="" type="text" name="interno" class="form-control" placeholder="interno" value="<?php echo $key->interno ?>">
   </div>
-  <?php endforeach?>
+
+<?php endforeach?>
 
 
 
 <?php
+// Jefe seleccionado
+$jefeselected = $conexion->prepare("SELECT jef.id, jef.empleado_id,emp.id,emp.nombre,emp.apellido
+
+FROM jefes jef JOIN empleados emp ON jef.empleado_id=emp.id
+
+
+
+WHERE jef.id=$jefe_id ");
+$jefeselected->execute();
+
+// Jefe nuevo
 $conjefe = $conexion->prepare('SELECT  jef.id,jef.empleado_id,emp.nombre,emp.apellido
 
 FROM empleados emp JOIN jefes jef ON emp.id=jef.empleado_id
@@ -66,14 +79,17 @@ $conjefe->execute();
 ?>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Jefe:</strong></label>
-
+<?php foreach ($jefeselected as $rjefeselected): ?>
 
 <select required  class="form-control chosen-select" id="jefe_id" name="jefe_id">
-
-
+<option selected="selected"  value="<?php echo $jefe_id ?>">
+<?php echo $rjefeselected['nombre']; ?>
+    <?php echo $rjefeselected['apellido']; ?>
+     <?php endforeach;?>
+</option>
      <option value=""   >Seleccione jefe</option>
      <?php foreach ($conjefe as $rconjefe): ?>
-                  <option value="<?php echo $rconjefe['id']; ?>"></a>
+                  <option value="<?php echo $rconjefe['id']; ?>">
 
     <?php echo $rconjefe['nombre']; ?>
     <?php echo $rconjefe['apellido']; ?>
@@ -248,10 +264,11 @@ foreach ($rlocselect as $locselect): ?>
 <?php
 $usuedit = $conexion->prepare("SELECT usu.id,usu.usuario
 
-FROM usuarios usu JOIN cuentas cue ON
-usu.id=cue.usuario_id
 
-WHERE cue.id=$id");
+
+FROM empleados emp JOIN usuarios usu
+on emp.usuario_id=usu.id
+WHERE emp.id=$id");
 
 $usuedit->execute();
 $rusuedit = $usuedit->fetchAll(PDO::FETCH_OBJ);
@@ -260,7 +277,7 @@ $rusuedit = $usuedit->fetchAll(PDO::FETCH_OBJ);
 
 <?php
 
-$conusu = $conexion->prepare('SELECT id,usuario FROM usuarios
+$conusu = $conexion->prepare('SELECT id,usuario,fecha_alta,fecha_baja FROM usuarios
 
 WHERE id>1');
 $conusu->execute();
@@ -268,7 +285,7 @@ $rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
 ?>
 <div class="form-group row">
   <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
+  <label  for="inputEmail1"><strong>Usuario Asignado</strong></label>
 
 
 <select required="" class="form-control" id="usuario_id" name="usuario_id">
@@ -289,10 +306,15 @@ $rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
                   <option value="<?php echo $conusu->id; ?>"></a>
 
     <?php echo $conusu->usuario ?>
-                </option>
                    <?php endforeach;?>
+                </option>
 </select>
   </div>
+
+
+
+
+
 </div>
 <!-- Fin Tabla Usuarios -->
 

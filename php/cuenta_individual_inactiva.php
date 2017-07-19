@@ -6,7 +6,7 @@ require 'conexion.php';
 
 $id = $_GET['id'];
 /*Cuentas Tipos seleccion indivudal desde el index*/
-$cuentas = $conexion->prepare('SELECT cue.id , con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",con.id as "con_id",cue.nombreempresa,cue.fecha_alta  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
+$cuentas = $conexion->prepare('SELECT cue.id , con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",cue.nombreempresa,cue.fecha_alta,cue.fecha_baja  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
  dep.nombre as "departamento", loc.nombre as "localidad"
 
 FROM cuentas cue JOIN usuarios usu ON cue.usuario_id=usu.id
@@ -40,4 +40,4 @@ $cuentasin->execute(array(
 
 $rcuentasin = $cuentasin->fetchAll(PDO::FETCH_OBJ);
 
-require '../views/cuentas/cuenta_individual.view.php';
+require '../views/cuentas/cuenta_individual_inactiva.view.php';

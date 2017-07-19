@@ -20,7 +20,7 @@
  <div class="row">
 <div class="container" >
 
- <div class="col-sm-10">
+ <div class="col-sm-10 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
@@ -40,7 +40,7 @@
       <?php foreach ($rcontactos as $contactos): ?>
                                 <tbody>
                                     <tr>
-                                        <td><a href="../php/empleado_individual.php?id=<?php echo $contactos->id; ?>"><?php echo $contactos->nombre; ?>
+                                        <td><a href="../php/contacto_individual.php?id=<?php echo $contactos->id; ?>"><?php echo $contactos->nombre; ?>
                                         <?php echo $contactos->apellido; ?></a></td>
 
                                         <td><?php echo $contactos->email; ?></td>

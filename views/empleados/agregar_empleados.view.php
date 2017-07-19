@@ -1,5 +1,11 @@
 
 <?php include '../views/menu/menuempleado_activo.view.php';?>
+<script>
+  function validarSiNumero(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El id de direccion " + numero + " no es un número");
+  }
+</script>
 
 <br>
 <br>
@@ -104,7 +110,7 @@ $conjefe->execute();
 <div class="form-group row">
  <div class="col-sm-1">
   <label  for="inputEmail1"><strong>id</strong></label>
-    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id">
+    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id" onChange="validarSiNumero(this.value)">
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Provincia:</strong></label>

@@ -23,13 +23,13 @@
 <?php foreach ($rcuentasin as $cuentasin): ?>
                                 <tbody>
                                     <tr>
-                                        <td><a href="../php/cuenta_individual.php?id=<?php echo $cuentasin->id; ?>"><?php echo $cuentasin->nombreempresa ?> </a></td>
+                                        <td><a href="../php/cuenta_individual_inactiva.php?id=<?php echo $cuentasin->id; ?>"><?php echo $cuentasin->nombreempresa ?> </a></td>
                                         <td><?php echo $cuentasin->cuit ?></td>
  <td><?php echo $cuentasin->telefono ?></td>
                                         <td><ul><?php echo $cuentasin->sitioweb; ?></ul></td>
 
                                             <td>
-                                             <a href="../php/modificar_cuenta.php?id=<?php echo $cuentasin->id ?>"><i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                                             <a href="../php/modificar_cuenta_inactiva.php?id=<?php echo $cuentasin->id ?>"><i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
 </td>
 <td>
 
@@ -37,7 +37,7 @@
 </td>
 <td>
 
-<a  href="../php/eliminar_cuenta.php?id=<?php echo $cuentasin->id; ?>"onclick="return confirm('¿Desea eliminar la cuenta y todos sus contactos Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+<a  href="../php/eliminar_cuenta.php?id=<?php echo $cuentasin->id; ?>&direccion_id=<?php echo $cuentasin->direccion_id; ?>"onclick="return confirm('¿Desea eliminar la cuenta y todos sus contactos Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
 </td>
 
 

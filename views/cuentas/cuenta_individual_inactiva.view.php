@@ -1,4 +1,4 @@
-<?php require '../views/menu/menucuenta_activa.view.php';?>
+<?php require '../views/menu/menucuenta_inactiva.view.php';?>
 <hr>
 <?php foreach ($rcuentas as $cuentas): ?>
   <div class="row">
@@ -33,13 +33,13 @@
 
                                         <td><?php echo $cuentas->cuit; ?></td>
                                         <td><?php echo $cuentas->telefono; ?></td>
-                                        <td><a href="../php/contacto_individual.php?id=<?php echo $cuentas->con_id; ?>"><?php echo $cuentas->nombrecontacto; ?>,
-                                          <?php echo $cuentas->apellidocontacto; ?></a>
+                                        <td><?php echo $cuentas->nombrecontacto; ?>,
+                                          <?php echo $cuentas->apellidocontacto; ?>
                                         </td>
                                          <td><?php echo $cuentas->sitioweb; ?></td>
 
                                                                                <td>
-      <a href="../php/modificar_cuenta.php?id=<?php echo $cuentas->id ?>">
+      <a href="../php/modificar_cuenta_inactiva.php?id=<?php echo $cuentas->id ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
@@ -52,13 +52,15 @@
           <th>Descripcion
           </th>
  <th>Fecha de alta</th>
+            <th>Fecha de baja</th>
           </tr>
           </thead>
           <tbody>
 
           <tr>
              <td><?php echo $cuentas->descripcion ?></td>
-             <td><?php echo $cuentas->fecha_alta; ?></td>
+              <td><?php echo $cuentas->fecha_alta; ?></td>
+                                        <td><?php echo $cuentas->fecha_baja; ?></td>
           </tr>
           </tbody>
 

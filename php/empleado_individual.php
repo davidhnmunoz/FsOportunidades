@@ -7,11 +7,11 @@ require 'conexion.php';
 $id      = $_GET['id'];
 $jefe_id = $_GET['jefe_id'];
 
-$empleados = $conexion->prepare('SELECT emp.id , emp.nombre , emp.apellido ,emp.cargo,
+$empleados = $conexion->prepare('SELECT emp.id , emp.nombre , emp.apellido ,emp.cargo,emp.jefe_id,
 emp.fechanacimiento,emp.telmovil,emp.interno ,emp.notas,
 dir.CodPostal, prov.nombre as "provincia" ,
  dep.nombre as "departamento", loc.nombre as "localidad",
-  usu.fecha_alta,usu.fecha_baja,usu.usuario
+  usu.id,usu.fecha_alta,usu.fecha_baja,usu.usuario
 
 FROM empleados emp
 JOIN usuarios usu ON emp.usuario_id=usu.id

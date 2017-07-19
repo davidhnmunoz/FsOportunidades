@@ -1,9 +1,9 @@
-<?php require '../views/menu/menuempleado_activo.view.php';?>
+<?php require '../views/menu/menuempleado_inactivo.view.php';?>
 
 
 
 <hr>
-  <center><h1>Empleados Activos</h1></center>
+  <center><h1>Empleados Inactivos</h1></center>
 
 <div class="row">
 <div class="col-md-3"></div>
@@ -30,7 +30,7 @@
         <th>Movil</th>
          <th>interno</th>
 
-         <th colspan="2">Accion</th>
+         <th colspan="3">Accion</th>
       </tr>
       </thead>
 
@@ -56,10 +56,15 @@
 
       <i class="editar fa fa-pencil-square-o fa-2x"  aria-hidden="true"></i></a>
     </td>
-    <td>
 
-      <a  href="../php/bajalogica_empleados.php?id=<?php echo $empleados->usuario_id; ?>"onclick="return confirm('¿Desea Dar de baja el Empleado y el usuario?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
-    </td>
+
+     <td>
+
+    <a   href="../php/alta_empleados.php?id=<?php echo $empleados->usuario_id ?>"onclick="return confirm('¿Desea Dar de Alta el Empleado y usuario?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
+</td>
+<td>
+<a  href="../php/eliminar_empleado.php?usuario_id=<?php echo $empleados->usuario_id; ?>&direccion_id=<?php echo $empleados->direccion_id ?>"onclick="return confirm('¿Desea eliminar el usuario Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+</td>
 
 
 

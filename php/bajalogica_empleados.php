@@ -22,4 +22,4 @@ $statement1->execute(array(
     ':id'     => $id,
     ':estado' => $estado));
 
-header('location: index_usuarios.php ');
+header('location: index_empleados.php ');

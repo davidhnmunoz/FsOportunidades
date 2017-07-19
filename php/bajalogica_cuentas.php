@@ -4,9 +4,16 @@ if (!isset($_SESSION['usuario'])) {
 }
 require 'conexion.php';
 
-$id        = $_GET['id'];
-$estado    = 0;
-$statement = $conexion->prepare('UPDATE  cuentas SET estado = :estado WHERE id = :id  ');
+$id         = $_GET['id'];
+$fecha_baja = date("Y-m-d");
+$estado     = 0;
+
+$statement = $conexion->prepare('UPDATE  cuentas SET estado = :estado, fecha_baja=:fecha_baja WHERE id = :id');
+
+$statement->execute(array(
+    ':id'         => $id,
+    ':estado'     => $estado,
+    ':fecha_baja' => $fecha_baja));
 
 $statement->execute(array(
     ':id' => $id, ':estado' => $estado));

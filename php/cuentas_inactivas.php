@@ -4,11 +4,8 @@ if (!isset($_SESSION['usuario'])) {
 }
 require 'conexion.php';
 
-// $cuentas = $conexion->prepare('SELECT * FROM cuentas ');
-// $cuentas->execute();
-
 $cuentasin = $conexion->prepare('SELECT cue.id as "id",cue.nombreempresa,cue.cuit ,cue.telefono,cue.sitioweb
-
+,cue.direccion_id
 
 FROM cuentas cue
 

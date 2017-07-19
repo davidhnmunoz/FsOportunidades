@@ -13,4 +13,10 @@ $statement = $conexion->prepare('UPDATE  usuarios SET estado = :estado,fecha_alt
 $statement->execute(array(
     ':id' => $id, ':estado' => $estado, ':fecha_alta' => $fecha_alta));
 
+$statement1 = $conexion->prepare('UPDATE empleados SET estado = :estado WHERE usuario_id =:id');
+
+$statement1->execute(array(
+    ':id'     => $id,
+    ':estado' => $estado));
+
 header('location: index_usuarios.php');

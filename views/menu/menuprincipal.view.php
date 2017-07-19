@@ -109,6 +109,7 @@
                                <!-- Empleados -->
                          <li class="nav-item dropdown">
 
+
                                     <li class="nav-item dropdown">
                                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
                                             Empleados
@@ -120,13 +121,35 @@
                                             <a class="dropdown-item" href="../php/index_empleados.php">
                                                 Empleados Activos
                                             </a>
-                                            <a class="dropdown-item" href="">
+                                            <a class="dropdown-item" href="../php/empleado_inactivo.php">
                                                 Empleados Inactivos
                                             </a>
                                         </div>
                                     </li>
                                 </li>
                                  <!-- Fin Empleados -->
+                                <!--  Oportuniades -->
+                                 <li class="nav-item dropdown">
+
+
+                                    <li class="nav-item dropdown">
+                                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
+                                            Oportunidades
+                                        </a>
+                                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                                            <a class="dropdown-item" href="../php/agregar_oportunidad.php">
+                                               Agregar Oportunidades
+                                            </a>
+                                            <a class="dropdown-item" href="../php/index.php">
+                                                Oportunidades Activas
+                                            </a>
+                                            <a class="dropdown-item" href="">
+                                                Oportunidades Inactivas
+                                            </a>
+                                        </div>
+                                    </li>
+                                </li>
+                                <!-- Fin Oportunidades -->
 
                                 <li class="nav-item ">
                                     <!-- BUSCAR -->

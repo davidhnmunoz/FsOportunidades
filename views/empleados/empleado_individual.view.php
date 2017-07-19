@@ -11,6 +11,7 @@
   </div>
 
 <div class="row">
+
   <div class="col-sm-10 offset-2">
 
  <table  class="table table-bordered table-sm table-responsive">
@@ -47,7 +48,7 @@
                                           <?php endforeach;?>
 
         <?php foreach ($rempleados as $empleados): ?>                                                                       <td>
-      <a href="../php/modificar_empleado.php?id=<?php echo $empleados->id ?>">
+      <a href="../php/modificarempleado_activo.php?id=<?php echo $empleados->id ?>&jefe_id=<?php echo $empleados->jefe_id ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
@@ -63,6 +64,7 @@
          <th>Usuario Asignado</th>
          <th>Fecha De Alta</th>
           <th>Fecha De Baja</th>
+          <th>Accion</th>
 
 
       </tr>
@@ -75,6 +77,10 @@
                                         <td><?php echo $empleados->usuario; ?></td>
                                         <td><?php echo $empleados->fecha_alta; ?></td>
                                         <td><?php echo $empleados->fecha_baja; ?></td>
+                                        <td>
+     <a href="../php/modificarusuario_activo.php?id=<?php echo $empleados->id ?>">
+      <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+    </td>
 </tr>
 </tbody>
 </table>

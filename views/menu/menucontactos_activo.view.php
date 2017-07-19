@@ -78,44 +78,47 @@
                             </li>
                             <!-- Fin Contactos -->
                             <!-- Usuarios -->
-                            <li class="nav-item dropdown">
-                                <li class="nav-item dropdown">
-                                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
-                                        Usuarios
-                                    </a>
-                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                        <a class="dropdown-item" href="">
+                                                           <li class="nav-item dropdown">
+
+                                    <li class="nav-item dropdown">
+                                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
+                                            Usuarios
+                                        </a>
+                                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                                             <a class="dropdown-item" href="../php/agregar_usuario.php">
                                             Agregar Usuario
                                         </a>
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="../php/index_usuarios.php">
                                             Usuarios Activos
                                         </a>
-                                        <a class="dropdown-item" href="">
+                                        <a class="dropdown-item" href="../php/usuario_inactivo.php">
                                             Usuarios Inactivos
                                         </a>
-                                    </div>
+                                        </div>
+                                    </li>
                                 </li>
-                            </li>
-                            <!-- Fin Usuarios -->
-                            <!-- Empleados -->
-                            <li class="nav-item dropdown">
-                                <li class="nav-item dropdown">
-                                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
-                                        Empleados
-                                    </a>
-                                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                                        <a class="dropdown-item" href="">
-                                            Agregar Empleado
+                               <!-- Fin Usuarios -->
+                               <!-- Empleados -->
+                         <li class="nav-item dropdown">
+
+
+                                    <li class="nav-item dropdown">
+                                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="" id="navbarDropdownMenuLink">
+                                            Empleados
                                         </a>
-                                        <a class="dropdown-item" href="">
-                                            Empleados Activos
-                                        </a>
-                                        <a class="dropdown-item" href="">
-                                            Empleados Inactivos
-                                        </a>
-                                    </div>
+                                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                                            <a class="dropdown-item" href="../php/agregar_empleado.php">
+                                               Agregar Empleado
+                                            </a>
+                                            <a class="dropdown-item" href="../php/index_empleados.php">
+                                                Empleados Activos
+                                            </a>
+                                            <a class="dropdown-item" href="../php/empleado_inactivo.php">
+                                                Empleados Inactivos
+                                            </a>
+                                        </div>
+                                    </li>
                                 </li>
-                            </li>
                             <!-- Fin Empleados -->
                             <li class="nav-item ">
                                 <!-- BUSCAR -->

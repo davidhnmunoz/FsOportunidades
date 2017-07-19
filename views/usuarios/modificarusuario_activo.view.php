@@ -2,6 +2,31 @@
 
 
 <?php include '../views/menu/menuusuarios_activos.view.php';?>
+<<!-- script type="text/javascript">
+$(document).ready(function() {
+  $('#username').blur(function(){
+
+    $('#Info').html('<img src="../assets/img/loader.gif" alt="" />').fadeOut(1000);
+
+    var username = $(this).val();
+    var dataString = 'username='+username;
+
+
+    $.ajax({
+            type: "POST",
+            url: "../php/validacion_usuario.php",
+            data: dataString,
+            success: function(data) {
+        $('#Info').fadeIn(1000).html(data);
+        //alert(data);
+            }
+        });
+    });
+});
+</script> -->
+<script src="../assets/js/validarusuario.js"></script>
+<script src="../assets/js/validarpass.js"></script>
+
 
 <br>
 <br>
@@ -17,7 +42,7 @@
 <a href="../php/index_usuarios.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
 </div>
-<form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
+<form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form" onSubmit="return validarPass();">
 <div class="form-group row">
 <div class="col-sm-12">
  <?php if (!empty($enviado)): ?>
@@ -29,22 +54,27 @@
 </div>
 </div>
 <?php foreach ($res as $key): ?>
+
 <div class="form-group row">
-<div class="col-sm-1">
-  <label  for="inputEmail1"><strong>id:</strong></label>
-    <input required="" value="<?php echo $key->id; ?>"  type="text" name="id" class="form-control" placeholder="id">
-  </div>
+    <input type="hidden" required="" value="<?php echo $key->id; ?>"  type="text" name="id"  class="form-control" placeholder="id">
+
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Usuario:</strong></label>
-    <input required="" value="<?php echo $key->usuario; ?>" type="text" name="usuario" class="form-control" placeholder="usuario">
+    <input required="" value="<?php echo $key->usuario; ?>" type="text" name="usuario" id="username" class="form-control" placeholder="usuario">
+    <span id="Info">
+                            </span>
+                        </input>
   </div>
 
 <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Contraseña:</strong></label>
-    <input required="" type="password" value="<?php echo $key->pass; ?>" name="pass" class="form-control" placeholder="Contraseña">
+    <input required="" type="password" value="<?php echo $key->pass; ?>" name="password" id="contra" class="form-control" placeholder="Contraseña">
+      <span id="pass" ></span>
+    </input>
+
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
     <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo $key->fecha_alta; ?>"  >
   </div>

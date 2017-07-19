@@ -18,12 +18,12 @@ if (isset($_GET['id'])) {
 if (isset($_POST['modificar'])) {
     $idUsu      = $_POST['id'];
     $usuario    = $_POST['usuario'];
-    $pass       = $_POST['pass'];
+    $pass       = $_POST['password'];
     $rol        = $_POST['rol'];
     $fecha_alta = $_POST['fecha_alta'];
-    var_dump($idUsu);
+
     /*update A Tabla usuario*/
-    $sql       = "UPDATE usuarios SET id=:idUSU, usuario=:usuario , pass=:pass , fecha_alta=:fecha_alta WHERE id=:idUsu";
+    $sql       = "UPDATE usuarios SET usuario=:usuario , pass=:pass , fecha_alta=:fecha_alta WHERE id=:idUsu";
     $resultado = $conexion->prepare($sql);
     $resultado->execute(array(
         ":idUsu"      => $idUsu,

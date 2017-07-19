@@ -19,6 +19,7 @@ if (isset($_POST['agregar'])) {
     $sitioweb      = $_POST['sitioweb'];
     $descripcion   = $_POST['descripcion'];
     $usuario_id    = $_POST['usuario_id'];
+    $fecha_alta    = $_POST['fecha_alta'];
     $estado        = 1;
 /*Tabla direcciones*/
     $direccion_id = $_POST['direccion_id'];
@@ -64,9 +65,9 @@ if (isset($_POST['agregar'])) {
             ':localidad'    => $localidad,
             ':direccion'    => $direccion));
         /*Insert A Tabla cuentas*/
-        $sql = $conexion->prepare('INSERT INTO cuentas (id,nombreempresa , telefono , sitioweb , cuit,descripcion,direccion_id,usuario_id, estado)
+        $sql = $conexion->prepare('INSERT INTO cuentas (id,nombreempresa , telefono , sitioweb , cuit,descripcion,direccion_id,usuario_id, estado,fecha_alta)
 
-            VALUES (:id,:nombreempresa , :telefono , :sitioweb , :cuit , :descripcion,:direccion_id,:usuario_id,:estado )');
+            VALUES (:id,:nombreempresa , :telefono , :sitioweb , :cuit , :descripcion,:direccion_id,:usuario_id,:estado,:fecha_alta )');
 
         $sql->execute(array(
             ':id'            => $id,
@@ -77,7 +78,8 @@ if (isset($_POST['agregar'])) {
             ':descripcion'   => $descripcion,
             ':direccion_id'  => $direccion_id,
             ':usuario_id'    => $usuario_id,
-            ':estado'        => $estado));
+            ':estado'        => $estado,
+            ':fecha_alta'    => $fecha_alta));
 
         /*Insertar a la tabla Origenes*/
         $sql1 = $conexion->prepare('INSERT INTO origenes (cuenta_id,tipoorigen_id)

@@ -28,7 +28,7 @@
 
 <th>Interno</th>
 
-         <th colspan="2">Accion</th>
+         <th colspan="3">Accion</th>
       </tr>
       </thead>
 
@@ -55,10 +55,13 @@
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
-    <td>
 
-      <a  href="../php/bajalogica_empleados.php?id=<?php echo $row['id']; ?>"onclick="return confirm('¿Desea Dar el Empleado y el usuario??')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
-    </td>
+<td>
+    <a   href="../php/alta_empleados.php?id=<?php echo $row['usuario_id'] ?>"onclick="return confirm('¿Desea Dar de Alta el Empleado y usuario?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
+</td>
+<td>
+<a  href="../php/eliminar_empleado.php?usuario_id=<?php echo $row['usuario_id'] ?>&direccion_id=<?php echo $row['direccion_id'] ?>"onclick="return confirm('¿Desea eliminar el usuario Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+</td>
 
 
 
@@ -69,9 +72,7 @@
  </div>
 </div>
 
-
-
-    </body>
+  </body>
     </html>
 <?php endif;?>
 <?php include '../views/menu/footer.view.php';?>

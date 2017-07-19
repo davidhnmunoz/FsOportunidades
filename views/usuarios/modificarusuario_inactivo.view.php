@@ -3,6 +3,7 @@
 
 <?php include '../views/menu/menuusuarios_activos.view.php';?>
 
+
 <br>
 <br>
 
@@ -30,10 +31,8 @@
 </div>
 <?php foreach ($res as $key): ?>
 <div class="form-group row">
-<div class="col-sm-1">
-  <label  for="inputEmail1"><strong>id:</strong></label>
-    <input required="" value="<?php echo $key->id; ?>"  type="text" name="id" class="form-control" placeholder="id">
-  </div>
+    <input type="hidden" required="" value="<?php echo $key->id; ?>"  type="text" name="id" class="form-control" placeholder="id">
+
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Usuario:</strong></label>
     <input required="" value="<?php echo $key->usuario; ?>" type="text" name="usuario" class="form-control" placeholder="usuario">
@@ -44,11 +43,11 @@
     <input required="" type="password" value="<?php echo $key->pass; ?>" name="pass" class="form-control" placeholder="Contraseña">
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
     <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo $key->fecha_alta; ?>"  >
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Baja:</strong></label>
     <input  type="date"  name="fecha_baja" class="form-control" value="<?php echo $key->fecha_baja; ?>"  >
   </div>

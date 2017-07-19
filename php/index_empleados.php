@@ -4,7 +4,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 require 'conexion.php';
 
-$empleados = $conexion->prepare("SELECT emp.id,emp.nombre,emp.apellido,emp.cargo,emp.interno,emp.telmovil,emp.jefe_id
+$empleados = $conexion->prepare("SELECT emp.id,emp.usuario_id,emp.nombre,emp.apellido,emp.cargo,emp.interno,emp.telmovil,emp.jefe_id
 
 
 FROM empleados emp

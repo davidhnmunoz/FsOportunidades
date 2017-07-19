@@ -54,7 +54,7 @@
     </td>
     <td>
 
-      <a  href="../php/bajalogica_usuario.php?id=<?php echo $usuarios->id; ?>"onclick="return confirm('¿Desea Dar de baja el usuario?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
+      <a  href="../php/bajalogica_usuario.php?id=<?php echo $usuarios->id; ?>"onclick="return confirm('¿Desea Dar de baja el usuario y el empleado?')"> <i class="eliminar fa fa-user-times fa-2x" aria-hidden="true"></i></i></a>
     </td>
 
 

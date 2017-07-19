@@ -1,4 +1,17 @@
 <?php include '../views/menu/menucuenta_activa.view.php';?>
+<script>
+  function ValidarIdCuenta(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El id de cuenta " + numero + " no es un número");
+  }
+</script>
+<script>
+  function ValidarIdDireccion(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El id de Direccion " + numero + " no es un número");
+  }
+</script>
+
 
 <br>
 <br>
@@ -25,7 +38,7 @@
 <div class="form-group row">
  <div class="col-sm-1">
   <label  for="inputEmail1"><strong>id:</strong></label>
-    <input required="" type="text" name="id" class="form-control test-input" placeholder="id">
+    <input required="" type="text" name="id" class="form-control test-input" placeholder="id" onChange="ValidarIdCuenta(this.value)">
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Cuit :</strong></label>
@@ -90,7 +103,7 @@
 <div class="form-group row">
  <div class="col-sm-1">
   <label  for="inputEmail1"><strong>id</strong></label>
-    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id">
+    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id" OnChange="ValidarIdDireccion(this.value)" >
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Provincia:</strong></label>
@@ -289,6 +302,10 @@ $conusu->execute();
                 </option>
                    <?php endforeach;?>
 </select>
+  </div>
+<div class="col-sm-4">
+  <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
+    <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo date("Y-m-d"); ?>" >
   </div>
 </div>
 <!-- Fin Tabla Usuarios -->

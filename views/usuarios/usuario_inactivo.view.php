@@ -2,6 +2,7 @@
 
 
 
+
 <hr>
   <center><h1>Usuarios inactivos</h1></center>
 
@@ -58,7 +59,7 @@
     <a   href="../php/alta_usuario.php?id=<?php echo $usuarios->id ?>"onclick="return confirm('¿Desea Dar de Alta el usuario?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
 </td>
 <td>
-<a  href="../php/eliminar_usuarios.php?id=<?php echo $usuarios->id; ?>"onclick="return confirm('¿Desea eliminar el usuario Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+<a  href="../php/eliminar_usuarios.php?id=<?php echo $usuarios->id; ?>&direccion_id=<?php echo $usuarios->direccion_id; ?>"onclick="return confirm('¿Desea eliminar el usuario y el Empleado Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
 </td>
 
 
