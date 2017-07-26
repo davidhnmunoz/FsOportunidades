@@ -54,12 +54,28 @@ if (isset($_POST['agregar'])) {
         $sql1->execute(array(
             ':rol' => $rol,
             ':id'  => $id));
-        /*Insert A tabla  usuarios_historias*/
-        $sql2 = $conexion->prepare('INSERT INTO usuarios_historias (pass,usuario_id )
+        /*Inserto A tabla  usuarios_historias 3 veces el mismo password para que despues se pueda validar*/
+        $insertuh1 = $conexion->prepare('INSERT INTO usuarios_historias (pass,usuario_id )
 
             VALUES (:pass ,:id  )');
 
-        $sql2->execute(array(
+        $insertuh1->execute(array(
+            ':pass' => $pass,
+            ':id'   => $id));
+// INSERT 2 A TABLA USUARIOS
+        $insertuh2 = $conexion->prepare('INSERT INTO usuarios_historias (pass,usuario_id )
+
+            VALUES (:pass ,:id  )');
+
+        $insertuh2->execute(array(
+            ':pass' => $pass,
+            ':id'   => $id));
+        // INSERT 3 A TABLA USUARIOS
+        $insertuh2 = $conexion->prepare('INSERT INTO usuarios_historias (pass,usuario_id )
+
+            VALUES (:pass ,:id  )');
+
+        $insertuh2->execute(array(
             ':pass' => $pass,
             ':id'   => $id));
 

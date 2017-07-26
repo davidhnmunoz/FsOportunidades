@@ -33,7 +33,7 @@
                     <label for="user_login">
                         Usuario:
                     </label>
-                    <input id="user_login" name="usuario" type="text">
+                    <input id="user_login" required="" name="usuario" type="text">
                         <button class="button helper-button clear">
                             <i aria-hidden="true" class="fa fa-user">
                             </i>
@@ -46,7 +46,7 @@
                     <label for="user_password">
                         Password:
                     </label>
-                    <input id="user_password" name="password" type="password">
+                    <input id="user_password" name="password" required="" type="password">
                         <button class="button helper-button reveal">
                             <i "="" aria-hidden="true" class="fa fa-key">
                             </i>

@@ -3,12 +3,8 @@ if (!isset($_SESSION['usuario'])) {
     header('location:../login/login.php');
 }
 require 'conexion.php';
+
 //EDITAR
-
-$errorcuit = '';
-
-$enviado = '';
-$enviar  = '';
 
 //Saco los datos de la cuenta
 if (isset($_GET['id'])) {
@@ -16,7 +12,8 @@ if (isset($_GET['id'])) {
     $id  = $_GET["id"];
     $sql = $conexion->prepare("SELECT * FROM  cuentas WHERE id =:id");
     $sql->execute(array(':id' => $id));
-    $res = $sql->fetchAll(PDO::FETCH_OBJ);
+    $res                   = $sql->fetchAll(PDO::FETCH_OBJ);
+    $_SESSION['cuenta_id'] = $id;
 
 }
 
@@ -49,88 +46,81 @@ if (isset($_POST['modificar'])) {
     $direccion    = $_POST["direccion"];
 
 /*Comprobacion de Cuit*/
-    $vcuit = $conexion->prepare("SELECT id,cuit FROM cuentas where id <>:idUsu");
-    $vcuit->execute(array(':idUsu' => $idUsu));
-    $resultadocuit = $vcuit->fetchAll(PDO::FETCH_OBJ);
+    $updatecuit = $conexion->prepare("UPDATE cuentas SET  cuit=:cuit WHERE id=:idUsu");
 
-    //var_dump($idUsu);
-    foreach ($resultadocuit as $key) {
+    if ($updatecuit->execute(array(":idUsu" => $idUsu,
+        ":cuit"                                 => $cuit))) {
 
-        if ($cuit == $key->cuit) {
-            //  var_dump($key->cuit);
-
-            header('location:repe.php');
-        } else {
-
-            $sql = "UPDATE cuentas SET nombreempresa=:nombreempresa , telefono=:telefono ,sitioweb=:sitioweb, cuit=:cuit,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta,fecha_baja=:fecha_baja
+        $sql = "UPDATE cuentas SET nombreempresa=:nombreempresa , telefono=:telefono ,sitioweb=:sitioweb,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta,fecha_baja=:fecha_baja
               WHERE id=:idUsu";
-            $resultado = $conexion->prepare($sql);
-            $resultado->execute(array(
-                ":idUsu"         => $idUsu,
-                ":nombreempresa" => $nombreempresa,
-                ":telefono"      => $telefono,
-                ":sitioweb"      => $sitioweb,
-                ":cuit"          => $cuit,
-                ":descripcion"   => $descripcion,
-                ":direccion_id"  => $direccion_id,
-                ":usuario_id"    => $usuario_id,
-                ":fecha_alta"    => $fecha_alta,
-                ":fecha_baja"    => $fecha_baja));
-            /*Insert a tabla direcciones
-             */
+        $resultado = $conexion->prepare($sql);
+        $resultado->execute(array(
+            ":idUsu"         => $idUsu,
+            ":nombreempresa" => $nombreempresa,
+            ":telefono"      => $telefono,
+            ":sitioweb"      => $sitioweb,
 
-            $query      = "UPDATE  direcciones SET provincia_id=:provincia ,departamento_id=:departamento, localidad_id=:localidad ,CodPostal=:direccion WHERE id=$direccion_id";
-            $resultado0 = $conexion->prepare($query);
-            $resultado0->execute(array(
-                ":provincia"    => $provincia,
-                ":departamento" => $departamento,
-                ":localidad"    => $localidad,
-                ":direccion"    => $direccion));
+            ":descripcion"   => $descripcion,
+            ":direccion_id"  => $direccion_id,
+            ":usuario_id"    => $usuario_id,
+            ":fecha_alta"    => $fecha_alta,
+            ":fecha_baja"    => $fecha_baja));
+        /*Insert a tabla direcciones
+         */
 
-            /*Actualizar a la tabla Origenes
-             */
+        $query      = "UPDATE  direcciones SET provincia_id=:provincia ,departamento_id=:departamento, localidad_id=:localidad ,CodPostal=:direccion WHERE id=$direccion_id";
+        $resultado0 = $conexion->prepare($query);
+        $resultado0->execute(array(
+            ":provincia"    => $provincia,
+            ":departamento" => $departamento,
+            ":localidad"    => $localidad,
+            ":direccion"    => $direccion));
 
-            var_dump($tiorigen);
-            $statment   = "UPDATE origenes SET tipoorigen_id=:tiorigen WHERE cuenta_id=$idUsu";
-            $resultado1 = $conexion->prepare($statment);
-            $resultado1->execute(array(
-                ":tiorigen" => $tiorigen));
-            var_dump($tiorigen);
+        /*Actualizar a la tabla Origenes
+         */
+
+        // var_dump($tiorigen);
+        $statment   = "UPDATE origenes SET tipoorigen_id=:tiorigen WHERE cuenta_id=$idUsu";
+        $resultado1 = $conexion->prepare($statment);
+        $resultado1->execute(array(
+            ":tiorigen" => $tiorigen));
+        // var_dump($tiorigen);
 
 /*Actualizar la tabla Propiedades
  */
-            $statment1  = "UPDATE propiedades SET tipopropiedad_id=:tiprop WHERE cuenta_id=$idUsu";
-            $resultado2 = $conexion->prepare($statment1);
-            $resultado2->execute(array(
-                ":tiprop" => $tiprop));
+        $statment1  = "UPDATE propiedades SET tipopropiedad_id=:tiprop WHERE cuenta_id=$idUsu";
+        $resultado2 = $conexion->prepare($statment1);
+        $resultado2->execute(array(
+            ":tiprop" => $tiprop));
 
 /*Actualizar la tabla Organizacion
  */
-            $statment2 = "UPDATE organizaciones SET tipoorganizacion_id=:tiorga WHERE  cuenta_id=$idUsu";
+        $statment2 = "UPDATE organizaciones SET tipoorganizacion_id=:tiorga WHERE  cuenta_id=$idUsu";
 
-            $resultado3 = $conexion->prepare($statment2);
-            $resultado3->execute(array(":tiorga" => $tiorga));
+        $resultado3 = $conexion->prepare($statment2);
+        $resultado3->execute(array(":tiorga" => $tiorga));
 
 /*Actualizar la tabla Numero empleados
 
  */
 
-            $statment3 = "UPDATE numeroempleados SET tiponumeroempleados_id=:tinemp WHERE  cuenta_id=$idUsu";
+        $statment3 = "UPDATE numeroempleados SET tiponumeroempleados_id=:tinemp WHERE  cuenta_id=$idUsu";
 
-            $resultado4 = $conexion->prepare($statment3);
-            $resultado4->execute(array(":tinemp" => $tinemp));
+        $resultado4 = $conexion->prepare($statment3);
+        $resultado4->execute(array(":tinemp" => $tinemp));
 
 /*Actualizar la tabla Sectores
  */
 
-            $statment4 = "UPDATE sectores SET tiposector_id=:tisec WHERE  cuenta_id=$idUsu";
+        $statment4 = "UPDATE sectores SET tiposector_id=:tisec WHERE  cuenta_id=$idUsu";
 
-            $resultado5 = $conexion->prepare($statment4);
-            $resultado5->execute(array(":tisec" => $tisec));
+        $resultado5 = $conexion->prepare($statment4);
+        $resultado5->execute(array(":tisec" => $tisec));
 
-            header('location:index_cuenta.php?exito');
+        header('location:cuentas_inactivas.php?exitoinactivas');
 
-        }
+    } else {
+        header('location:cuitrepe.php');
     }
 
 }

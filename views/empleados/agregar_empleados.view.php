@@ -6,6 +6,7 @@
       alert("El id de direccion " + numero + " no es un número");
   }
 </script>
+<script src="../assets/js/validar_id_direccion.js"></script>
 
 <br>
 <br>
@@ -106,11 +107,15 @@ $conjefe->execute();
 <!-- Empieza Direcciones -->
 <hr>
 <h2 align="center">Direccion</h2>
+
 <hr>
 <div class="form-group row">
- <div class="col-sm-1">
+ <div class="col-sm-2">
   <label  for="inputEmail1"><strong>id</strong></label>
-    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id" onChange="validarSiNumero(this.value)">
+    <input required="" type="text" name="direccion_id" class="form-control " id="direccion_id" placeholder="id" onChange="validarSiNumero(this.value)">
+     <span id="Infodir">
+                            </span>
+                        </input>
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Provincia:</strong></label>

@@ -16,6 +16,7 @@
       <tr>
 
          <th>Cuit</th>
+
          <th>Telefono</th>
           <th>Contacto</th>
             <th>Sitioweb</th>
@@ -33,8 +34,8 @@
 
                                         <td><?php echo $cuentas->cuit; ?></td>
                                         <td><?php echo $cuentas->telefono; ?></td>
-                                        <td><?php echo $cuentas->nombrecontacto; ?>,
-                                          <?php echo $cuentas->apellidocontacto; ?>
+                                        <td> <a href="../php/contacto_individual.php?id=<?php echo $cuentas->con_id; ?>"><?php echo $cuentas->nombrecontacto; ?>,
+                                          <?php echo $cuentas->apellidocontacto; ?></a>
                                         </td>
                                          <td><?php echo $cuentas->sitioweb; ?></td>
 

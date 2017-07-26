@@ -21,17 +21,17 @@
  <div class="row">
 <div class="container" >
 
- <div class="col-sm-8 offset-4">
+ <div class="col-sm-8 offset-3">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
          <th>Nombre</th>
 
-         <th>Rol</th>
+         <th><center>Rol</center></th>
          <th>Fecha De Alta</th>
 
           <th>Fecha De Baja</th>
-         <th colspan="3">Accion</th>
+         <th colspan="4"><center>Accion</center> </th>
       </tr>
       </thead>
 
@@ -58,6 +58,11 @@
 
     <a   href="../php/alta_usuario.php?id=<?php echo $usuarios->id ?>"onclick="return confirm('¿Desea Dar de Alta el usuario?')"><i class="alta fa fa-user-plus fa-2x" aria-hidden="true"></i></a>
 </td>
+<td>
+      <a href="../php/cambio_pass_usuario.php?id=<?php echo $usuarios->id ?>">
+
+      <i class="editar fa fa-key fa-2x"  aria-hidden="true"></i></a>
+    </td>
 <td>
 <a  href="../php/eliminar_usuarios.php?id=<?php echo $usuarios->id; ?>&direccion_id=<?php echo $usuarios->direccion_id; ?>"onclick="return confirm('¿Desea eliminar el usuario y el Empleado Permanentemente?')"> <i class="eliminar fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
 </td>

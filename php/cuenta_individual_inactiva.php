@@ -6,7 +6,7 @@ require 'conexion.php';
 
 $id = $_GET['id'];
 /*Cuentas Tipos seleccion indivudal desde el index*/
-$cuentas = $conexion->prepare('SELECT cue.id , con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",cue.nombreempresa,cue.fecha_alta,cue.fecha_baja  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
+$cuentas = $conexion->prepare('SELECT cue.id , con.nombre as "nombrecontacto", con.apellido as "apellidocontacto", con.id as "con_id",cue.nombreempresa,cue.fecha_alta,cue.fecha_baja  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
  dep.nombre as "departamento", loc.nombre as "localidad"
 
 FROM cuentas cue JOIN usuarios usu ON cue.usuario_id=usu.id
@@ -16,6 +16,7 @@ JOIN direcciones dir ON cue.direccion_id=dir.id
 JOIN provincias prov ON dir.provincia_id=prov.id
 JOIN departamentos dep ON dir.departamento_id=dep.id
 JOIN localidades loc ON dir.localidad_id=loc.id
+
 WHERE cue.id=:id LIMIT 1');
 
 $cuentas->execute(array(

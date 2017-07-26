@@ -38,11 +38,6 @@
     <input required="" value="<?php echo $key->usuario; ?>" type="text" name="usuario" class="form-control" placeholder="usuario">
   </div>
 
-<div class="col-sm-3">
-  <label  for="inputEmail1"><strong>Contraseña:</strong></label>
-    <input required="" type="password" value="<?php echo $key->pass; ?>" name="pass" class="form-control" placeholder="Contraseña">
-  </div>
-
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
     <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo $key->fecha_alta; ?>"  >
@@ -90,6 +85,7 @@ $rsrol = $srol->fetchAll(PDO::FETCH_OBJ);
 <?php echo $srol->descripcion ?></option>
 
 <?php endforeach;?>
+
 
 
 

@@ -5,6 +5,17 @@
 
   <center><h1>Cuentas Inactivas</h1></center>
 
+<div class="col-md-4"></div>
+<div class="col-md-6 offset-2"><?php if (isset($_GET['exitoinactivas'])) {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Exitos!</strong> La cuenta fue modificada con exitos del sistema.
+    </div>';
+    echo '<meta http-equiv="refresh" content="4;url=../php/cuentas_inactivas.php">';
+}?></div>
+
 <div class="col-sm-10 offset-1">
 
   <table class="table table-bordered table-sm table-responsive">
@@ -19,6 +30,7 @@
          <th colspan="3">Accion</th>
       </tr>
   </thead>
+
 
 <?php foreach ($rcuentasin as $cuentasin): ?>
                                 <tbody>

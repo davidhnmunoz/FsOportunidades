@@ -3,6 +3,8 @@
 <?php include '../views/menu/menuusuarios_activos.view.php';?>
 <script src="../assets/js/validarpass.js"></script>
 <script src="../assets/js/validarusuario.js"></script>
+<script src="../assets/js/validar_id_usuario.js"></script>
+
 <script>
   function validarSiNumero(numero){
     if (!/^([0-9])*$/.test(numero))
@@ -36,9 +38,13 @@
 </div>
 </div>
 <div class="form-group row">
-<div class="col-sm-1">
-  <label  for="inputEmail1"><strong>id:</strong></label>
-    <input required="" type="text" name="id" class="form-control" placeholder="id" onChange="validarSiNumero(this.value)">
+<div class="col-sm-2">
+  <label  for="inputEmail1"><strong>Id:</strong></label>
+    <input required="" type="text" name="id" id="usuario_id" class="form-control" placeholder="id" onChange="validarSiNumero(this.value)">
+    <span id="Infoid">
+                            </span>
+                        </input>
+
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Usuario:</strong></label>
@@ -49,6 +55,7 @@
   </div>
 
 <div class="col-sm-4">
+
   <label  for="inputEmail1"><strong>Contraseña:</strong></label>
     <input required="" type="password" id="contra" name="password" class="form-control" placeholder="Contraseña">
     <span id="pass" ></span>

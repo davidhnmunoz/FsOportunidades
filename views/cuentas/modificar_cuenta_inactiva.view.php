@@ -1,8 +1,14 @@
 
 
 <?php require '../views/menu/menucuenta_inactiva.view.php';?>
+<script>
+  function validarSiNumero(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El CUIT " + numero + " solo debe contener numeros");
+  }
+</script>
 
-
+<script src="../assets/js/validar_cuit_cuenta_modificar.js"></script>
 <br>
 <br>
 
@@ -17,7 +23,10 @@
 </div>
 
 
-<form class="form-comtrol formod" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
+<form class="form-comtrol formod" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form"
+
+
+  >
 <!-- Basico De Cuenta -->
 
 
@@ -29,9 +38,13 @@
 
     <input type="hidden" value="<?php echo $key->id; ?>"  type="text" name="id" class="form-control test-input" placeholder="id">
 
+
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Cuit :</strong></label>
-    <input pattern="\d{11}"  required required type="text" name="cuit" class="form-control" title="El Cuit debe tener 11 digitos enteros ej: 30710316097" value="<?php echo $key->cuit ?>" >
+    <input pattern="\d{11}"  required required type="text" id="cuitcuenta" name="cuit" class="form-control" title="El Cuit debe tener 11 digitos enteros ej: 30710316097" value="<?php echo $key->cuit ?>" onChange="validarSiNumero(this.value)"  >
+    <span id="Infocuenta">
+                            </span>
+                        </input>
   </div>
   <div class="col-sm-5">
   <label  for="inputEmail1"><strong>Nombre:</strong></label>

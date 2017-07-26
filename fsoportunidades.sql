@@ -23898,7 +23898,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   CONSTRAINT `FK_roles_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.roles: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.roles: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `usuario_id`, `tiposroles_id`) VALUES
 	(2, 1, 1),
@@ -24149,15 +24149,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12344 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla fsoportunidades.usuarios: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla fsoportunidades.usuarios: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `usuario`, `pass`, `fecha_alta`, `alta_pass`, `estado`, `fecha_baja`) VALUES
-	(1, 'admin', 'Abcd1234', '2014-10-10', '0000-00-00', 1, NULL),
-	(2, 'irios', 'Abcd1234', '2015-02-02', '0000-00-00', 1, '0000-00-00'),
-	(3, 'ygianola', 'Abcd1234', '2015-02-01', '0000-00-00', 1, NULL),
-	(4, 'jbianchi', 'Abcd1234', '2016-08-08', '0000-00-00', 1, NULL),
-	(5, 'rcajal', 'Abcd1234', '2017-07-13', '0000-00-00', 0, '2017-07-13'),
-	(6, 'jbrandi', 'Abcd1234', '2015-01-01', '0000-00-00', 1, '0000-00-00'),
+	(1, 'admin', 'Abcd1234', '2014-10-10', '2017-07-19', 1, NULL),
+	(2, 'irios', 'Abcd1234', '2015-02-02', '2017-07-19', 1, '0000-00-00'),
+	(3, 'ygianola', 'Abcd1234', '2015-02-01', '2017-07-19', 1, NULL),
+	(4, 'jbianchi', 'Abcd1234', '2016-08-08', '2017-07-19', 1, NULL),
+	(5, 'rcajal', 'Abcd1234', '2017-07-13', '2017-07-19', 0, '2017-07-13'),
+	(6, 'jbrandi', 'Abcd1234', '2015-01-01', '2017-07-19', 1, '0000-00-00'),
 	(12343, 'baters', 'Abcd12345', '2017-07-19', '2017-07-19', 1, NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 

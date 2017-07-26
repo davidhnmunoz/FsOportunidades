@@ -148,6 +148,9 @@
                                     <a class="dropdown-item" href="../php/index.php">
                                         Perfil
                                     </a>
+                                    <a class="dropdown-item" href="../php/cambio_pass.php">
+                                                Cambiar Contraseña
+                                            </a>
                                     <a class="dropdown-item" href="../php/cerrar.php">
                                         Cerrar Sesión
                                     </a>

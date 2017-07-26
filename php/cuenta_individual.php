@@ -9,6 +9,7 @@ $id = $_GET['id'];
 $cuentas = $conexion->prepare('SELECT cue.id , con.nombre as "nombrecontacto", con.apellido as "apellidocontacto",con.id as "con_id",cue.nombreempresa,cue.fecha_alta  ,cue.telefono,cue.sitioweb,cue.cuit,cue.descripcion, cue.telefono, emp.nombre, emp.apellido, dir.CodPostal, prov.nombre as "provincia" ,
  dep.nombre as "departamento", loc.nombre as "localidad"
 
+
 FROM cuentas cue JOIN usuarios usu ON cue.usuario_id=usu.id
  JOIN contactos con ON cue.id=con.cuenta_id
 JOIN empleados emp ON usu.id=emp.usuario_id

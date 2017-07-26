@@ -5,8 +5,8 @@
 <hr>
   <center><h1>Bienvenidos a Fs Oportunidades</h1></center>
   <div class="row">
-<div class="col-md-3"></div>
-<div class="col-md-5"><?php if (isset($_GET['exito'])) {
+  <div class="container">
+<div class="col-md-6 offset-2"><?php if (isset($_GET['exito'])) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -15,6 +15,16 @@
     </div>';
     echo '<meta http-equiv="refresh" content="4;url=index.php">';
 }?></div>
+<div class="col-md-6 offset-2"><?php if (isset($_GET['exitocontra'])) {
+    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Exitos!</strong>La contraseña Fue Cambiadada Correctamente
+    </div>';
+    echo '<meta http-equiv="refresh" content="4;url=index.php">';
+}?></div>
+  </div>
   </div>
    <div class="row">
 <div class="container" >

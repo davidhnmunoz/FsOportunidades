@@ -4,6 +4,18 @@ if (!isset($_SESSION['usuario'])) {
 }
 require 'conexion.php';
 
+$id = $_SESSION['idusuario'];
+
+$sql = $conexion->prepare('SELECT INTERVAL 90 DAY +   alta_pass AS cambiar_pass FROM usuarios WHERE id=:id');
+$sql->bindValue(':id', $id);
+$sql->execute();
+$passconsultada = $sql->fetch(PDO::FETCH_COLUMN);
+$hoy            = date('Y-m-d');
+
+if ($hoy >= $passconsultada) {
+    header('location:cambio_pass.php');
+}
+
 $oportunidades = $conexion->prepare('SELECT * FROM oportunidades Where estado = 1');
 $oportunidades->execute();
 $roportunidades = $oportunidades->execute();

@@ -140,12 +140,29 @@
                                             <a class="dropdown-item" href="../php/agregar_oportunidad.php">
                                                Agregar Oportunidades
                                             </a>
+
+
+
+                                             <a class="dropdown-item" href="">
+                                                  Mis oportunidades abiertas
+                                            </a>
                                             <a class="dropdown-item" href="../php/index.php">
-                                                Oportunidades Activas
+                                                Oportunidades Abiertas
                                             </a>
                                             <a class="dropdown-item" href="">
-                                                Oportunidades Inactivas
+                                                Oportunidades Cerradas
                                             </a>
+                                             <a class="dropdown-item" href="">
+                                                Oportunidades Ganadas
+                                            </a>
+                                            <a class="dropdown-item" href="">
+                                                Oportunidades Perdidas
+                                            </a>
+
+                                             <a class="dropdown-item" href="">
+                                                 Postergadas
+                                            </a>
+
                                         </div>
                                     </li>
                                 </li>
@@ -183,6 +200,10 @@
                                             <a class="dropdown-item" href="../php/index.php">
                                                 Perfil
                                             </a>
+                                             <a class="dropdown-item" href="../php/cambio_pass.php">
+                                                Cambiar Contraseña
+                                            </a>
+
 
                                             <a class="dropdown-item" href="../php/cerrar.php">
                                                 Cerrar Sesión

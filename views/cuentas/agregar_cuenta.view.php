@@ -12,6 +12,16 @@
   }
 </script>
 
+<script>
+  function ValidarCuit(numero){
+    if (!/^([0-9])*$/.test(numero))
+      alert("El Cuit " + numero + " no es un número");
+  }
+</script>
+
+<script src="../assets/js/validar_id_cuenta.js"></script>
+<script src="../assets/js/validar_cuit.js"></script>
+<script src="../assets/js/validar_id_direccion.js"></script>
 
 <br>
 <br>
@@ -31,20 +41,29 @@
 <div class="col-sm-8 offset-2">
             <div class="alert alert-success">
             <?php echo $enviado; ?>
+
             </div>
   <?php endif;?>
 </div>
 </div>
 <div class="form-group row">
- <div class="col-sm-1">
+ <div class="col-sm-2">
   <label  for="inputEmail1"><strong>id:</strong></label>
-    <input required="" type="text" name="id" class="form-control test-input" placeholder="id" onChange="ValidarIdCuenta(this.value)">
+    <input required="" type="text" name="id" id="idcuenta" class="form-control test-input" placeholder="id" onChange="ValidarIdCuenta(this.value)">
+    <span id="Info">
+                            </span>
+                        </input>
   </div>
+
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Cuit :</strong></label>
-    <input required="" type="text" name="cuit" class="form-control" placeholder="Cuit">
+    <input required="" type="text" name="cuit" id="cuitcuenta" class="form-control" placeholder="Cuit" onChange="ValidarCuit(this.value)">
+    <span id="Infocuenta">
+                            </span>
+                        </input>
+
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Nombre:</strong></label>
     <input required="" type="text" name="nombreempresa" class="form-control " placeholder="Nombre">
   </div>
@@ -101,9 +120,12 @@
 <h2 align="center">Direccion</h2>
 <hr>
 <div class="form-group row">
- <div class="col-sm-1">
+ <div class="col-sm-2">
   <label  for="inputEmail1"><strong>id</strong></label>
-    <input required="" type="text" name="direccion_id" class="form-control " placeholder="id" OnChange="ValidarIdDireccion(this.value)" >
+    <input required="" type="text" name="direccion_id" id="direccion_id" class="form-control " placeholder="id" OnChange="ValidarIdDireccion(this.value)" >
+    <span id="Infodir">
+                            </span>
+                        </input>
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Provincia:</strong></label>

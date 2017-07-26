@@ -2,30 +2,9 @@
 
 
 <?php include '../views/menu/menuusuarios_activos.view.php';?>
-<<!-- script type="text/javascript">
-$(document).ready(function() {
-  $('#username').blur(function(){
 
-    $('#Info').html('<img src="../assets/img/loader.gif" alt="" />').fadeOut(1000);
+<script src="../assets/js/validar_usuario_modificar.js"></script>
 
-    var username = $(this).val();
-    var dataString = 'username='+username;
-
-
-    $.ajax({
-            type: "POST",
-            url: "../php/validacion_usuario.php",
-            data: dataString,
-            success: function(data) {
-        $('#Info').fadeIn(1000).html(data);
-        //alert(data);
-            }
-        });
-    });
-});
-</script> -->
-<script src="../assets/js/validarusuario.js"></script>
-<script src="../assets/js/validarpass.js"></script>
 
 
 <br>
@@ -42,7 +21,7 @@ $(document).ready(function() {
 <a href="../php/index_usuarios.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
 </div>
-<form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form" onSubmit="return validarPass();">
+<form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form" >
 <div class="form-group row">
 <div class="col-sm-12">
  <?php if (!empty($enviado)): ?>
@@ -51,6 +30,7 @@ $(document).ready(function() {
             <?php echo $enviado; ?>
             </div>
   <?php endif;?>
+
 </div>
 </div>
 <?php foreach ($res as $key): ?>
@@ -61,18 +41,11 @@ $(document).ready(function() {
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Usuario:</strong></label>
     <input required="" value="<?php echo $key->usuario; ?>" type="text" name="usuario" id="username" class="form-control" placeholder="usuario">
-    <span id="Info">
+ <span id="Infousu">
                             </span>
                         </input>
   </div>
 
-<div class="col-sm-3">
-  <label  for="inputEmail1"><strong>Contraseña:</strong></label>
-    <input required="" type="password" value="<?php echo $key->pass; ?>" name="password" id="contra" class="form-control" placeholder="Contraseña">
-      <span id="pass" ></span>
-    </input>
-
-  </div>
 
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>

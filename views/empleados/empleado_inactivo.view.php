@@ -40,7 +40,7 @@
       <?php foreach ($rempleados as $empleados): ?>
                                 <tbody>
                                     <tr>
-                                        <td><a href="../php/empleado_individual.php?id=<?php echo $empleados->id ?>&jefe_id=<?php echo $empleados->jefe_id ?>">
+                                        <td><a href="../php/empleado_individual_inactivo.php?id=<?php echo $empleados->id ?>&jefe_id=<?php echo $empleados->jefe_id ?>">
                                         <?php echo $empleados->nombre; ?>
                                         <?php echo $empleados->apellido; ?></a></td>
 
