@@ -17,13 +17,16 @@ JOIN cuentas cue ON con.cuenta_id=cue.id
 }
 
 if (isset($_POST['modificar'])) {
-    $idUsu      = $_POST["id"];
-    $cuenta_id  = $_POST['cuenta_id'];
-    $usuario_id = $_POST['usuario_id'];
-    $nombre     = $_POST['nombre'];
-    $apellido   = $_POST['apellido'];
-    $email      = $_POST['email'];
-    $telefono   = $_POST['telefono'];
+
+    $usuario_id = $_SESSION['idusuario'];
+
+    $idUsu     = $_POST["id"];
+    $cuenta_id = $_POST['cuenta_id'];
+
+    $nombre   = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $email    = $_POST['email'];
+    $telefono = $_POST['telefono'];
 
     $sql       = "UPDATE contactos SET cuenta_id=:cuenta_id , usuario_id=:usuario_id ,nombre=:nombre, apellido=:apellido,email=:email,telefono=:telefono  WHERE id=:idUsu";
     $resultado = $conexion->prepare($sql);

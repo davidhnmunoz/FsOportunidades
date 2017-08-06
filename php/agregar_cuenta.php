@@ -5,20 +5,22 @@ if (!isset($_SESSION['usuario'])) {
 require 'conexion.php';
 
 //agregar
-$errorid   = '';
-$errorcuit = '';
-$errorid_c = '';
-$enviado   = '';
-$enviar    = '';
+$errorid      = '';
+$errorcuit    = '';
+$errorid_c    = '';
+$enviado      = '';
+$enviar       = '';
+$errorempresa = '';
 
 if (isset($_POST['agregar'])) {
+    $usuario_id = $_SESSION['idusuario'];
+
     $id            = $_POST['id'];
     $cuit          = $_POST['cuit'];
     $nombreempresa = $_POST['nombreempresa'];
     $telefono      = $_POST['telefono'];
     $sitioweb      = $_POST['sitioweb'];
     $descripcion   = $_POST['descripcion'];
-    $usuario_id    = $_POST['usuario_id'];
     $fecha_alta    = $_POST['fecha_alta'];
     $estado        = 1;
 /*Tabla direcciones*/
@@ -42,6 +44,11 @@ if (isset($_POST['agregar'])) {
     $vcuit = $conexion->prepare('SELECT * FROM cuentas WHERE cuit = :cuit LIMIT 1');
     $vcuit->execute(array(':cuit' => $cuit));
     $resultadocuit = $vcuit->fetch();
+    /*Validacion Nombre empresa*/
+    $vnemp = $conexion->prepare('SELECT * FROM cuentas WHERE nombreempresa = :nombreempresa ');
+    $vnemp->execute(array(':nombreempresa' => $nombreempresa));
+    $resultadoemp = $vnemp->fetch();
+
     /*Validacion direccion_id en tabla direcciones*/
     $vid_c = $conexion->prepare('SELECT * FROM direcciones WHERE id=:direccion_id');
     $vid_c->execute(array(':direccion_id' => $direccion_id));
@@ -50,7 +57,10 @@ if (isset($_POST['agregar'])) {
     if ($resultadoid == true) {
         $errorid .= '<strong>ID en uso</strong>';
     } elseif ($resultadocuit == true) {
+
         $errorcuit .= '<strong> Cuit Ya Ingresado!</strong>';
+    } elseif ($resultadoemp == true) {
+        $errorempresa .= '<strong> Cuenta Ya Ingresada!</strong>';
     } elseif ($resultadoid_c == true) {
         $errorid_c .= '<strong>ID ciudad en uso</strong>';
     } else {

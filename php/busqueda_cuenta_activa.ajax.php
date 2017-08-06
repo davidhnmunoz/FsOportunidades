@@ -5,6 +5,7 @@ if (!isset($_SESSION['usuario'])) {
 require 'conexion.php';
 
 require '../views/menu/menucuenta_activa.view.php';?>
+
 <hr>
 
 

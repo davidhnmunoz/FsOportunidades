@@ -79,60 +79,10 @@ $rscuenta = $scuenta->fetchAll(PDO::FETCH_OBJ);
 
 
 
-<hr>
 
 
 
 
-
-<!-- Tablas Usuarios -->
-<?php
-$conusu = $conexion->prepare("SELECT con.usuario_id,con.id,usu.usuario
-
-
-FROM  contactos con
-JOIN usuarios usu ON con.usuario_id=usu.id
-
-
-
-
- WHERE con.id = $id");
-$conusu->execute();
-
-$rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
-/*Nuevo usuario*/
-$nuevousu = $conexion->prepare('SELECT id,usuario FROM usuarios
-
-WHERE id>1');
-$nuevousu->execute();
-
-$rnuevousu = $nuevousu->fetchAll(PDO::FETCH_OBJ);
-
-?>
-<div class="form-group row">
-  <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
-
-<label  for="inputEmail1"><strong>Usuario</strong></label>
-<select required  class="form-control chosen-select" id="usuario_id" name="usuario_id">
-     <?php foreach ($rconusu as $conusu): ?>
-<option selected="selected" value="<?php echo $conusu->usuario_id ?>"></a>
-
-    <?php echo $conusu->usuario ?>
-                </option>
-                   <?php endforeach;?>
-
-     <option value=""   >Seleccione usuario</option>
-     <?php foreach ($rnuevousu as $nuevousu): ?>
-                  <option value="<?php echo $nuevousu->id ?>"></a>
-
-    <?php echo $nuevousu->usuario ?>
-                </option>
-                   <?php endforeach;?>
-</select>
-  </div>
-</div>
-<!-- Fin Tabla Usuarios -->
 
 
 

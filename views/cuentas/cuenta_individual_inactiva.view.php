@@ -1,26 +1,34 @@
 <?php require '../views/menu/menucuenta_inactiva.view.php';?>
 <hr>
+<hr>
 <?php foreach ($rcuentas as $cuentas): ?>
   <div class="row">
  <div class="container">
-  <div class="bg-inverse text-white col-sm-8 offset-2">
-
-  <center><h2> <?php echo $cuentas->nombreempresa; ?></h2></center>
-  </div>
 
 <div class="row">
   <div class="col-sm-10 offset-2">
 
  <table  class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
+
+
+   <tr>
+                                                        <th colspan="5">
+                                                            <h2>
+                                                                <center>
+                                                                     <?php echo $cuentas->nombreempresa; ?>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+      <tr>
       <tr>
 
          <th>Cuit</th>
+         <th>Telefono Empresa</th>
 
-         <th>Telefono</th>
-          <th>Contacto</th>
             <th>Sitioweb</th>
-
+          <th>Fecha De alta</th>
             <th>Accion</th>
 
       </tr>
@@ -34,65 +42,129 @@
 
                                         <td><?php echo $cuentas->cuit; ?></td>
                                         <td><?php echo $cuentas->telefono; ?></td>
-                                        <td> <a href="../php/contacto_individual.php?id=<?php echo $cuentas->con_id; ?>"><?php echo $cuentas->nombrecontacto; ?>,
-                                          <?php echo $cuentas->apellidocontacto; ?></a>
-                                        </td>
-                                         <td><?php echo $cuentas->sitioweb; ?></td>
+                                       <td><?php echo $cuentas->sitioweb; ?></td>
+                                       <td><?php echo $cuentas->fecha_alta; ?></td>
+
 
                                                                                <td>
-      <a href="../php/modificar_cuenta_inactiva.php?id=<?php echo $cuentas->id ?>">
+      <a href="../php/modificar_cuenta.php?id=<?php echo $cuentas->id ?>">
 
       <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
     </td>
                                     </tr>
                                     </tbody>
 </table>
+
   <table  class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
           <tr>
           <th>Descripcion
           </th>
- <th>Fecha de alta</th>
-            <th>Fecha de baja</th>
           </tr>
           </thead>
+
           <tbody>
 
           <tr>
              <td><?php echo $cuentas->descripcion ?></td>
-              <td><?php echo $cuentas->fecha_alta; ?></td>
-                                        <td><?php echo $cuentas->fecha_baja; ?></td>
+
           </tr>
           </tbody>
 
 </table>
+<?php endforeach;?>
+</table>
+<div class="row">
+  <div class="col-sm-6 ">
+
+
+  <table  class="table table-bordered table-sm table-responsive">
+  <thead class="thead-inverse">
+  <tr>
+                                                        <th colspan="3">
+                                                            <h2>
+                                                                <center>
+                                                            <h2 align="center">Contactos</h2>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+      <tr>
+          <tr>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+  <?php foreach ($rcontactos as $contactos): ?>
+
+          </tr>
+          </thead>
+
+          <tbody>
+
+          <tr>
+            <td><a href="../php/contacto_individual.php?id=<?php echo $contactos->con_id; ?>"><?php echo $contactos->nombrecontacto; ?>,
+                                          <?php echo $contactos->apellidocontacto; ?></a></td>
+                                          <td> <?php echo $contactos->telefono; ?></td>
+                                          <td> <?php echo $contactos->email; ?></td>
+
+          </tr>
+          </tbody>
+<?php endforeach;?>
+</table>
+
+
+
+
 </div>
   </div>
 
 <div class="row">
-  <div class="col-sm-8 offset-2">
+  <div class="col-sm-8">
 
-<div  class="bg-inverse text-white">
-<h2 align="center">Direccion</h2>
-  </div>
+
 <table class="table table-bordered table-sm table-responsive">
 
 
 <thead class="thead-inverse">
+<?php foreach ($rcuentas as $cuentas): ?>
 
-         <th>Direccion y Cod Postal</th>
-         <th>Provincia</th>
-         <th>Departamento</th>
-        <th>Localidad</th>
+  <tr>
+                                                        <th colspan="2">
+                                                            <h2>
+                                                                <center>
+                                                            <h2 align="center">Direccion</h2>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+
+
 </thead>
 
-                  <tbody>
+                  <tbody class="thead-inverse">
                   <tr>
 
-                                          <td><?php echo $cuentas->CodPostal ?></td>
-                                            <td><?php echo $cuentas->provincia ?></td>
-                                            <td><?php echo $cuentas->departamento ?></td>
-                                            <td>   <?php echo $cuentas->localidad ?></td>
+
+<tr>
+ <th>Direccion y Cod Postal</th>
+         <td><?php echo $cuentas->CodPostal ?></td>
+
+</tr>
+<tr>
+         <th>Provincia</th>
+         <td><?php echo $cuentas->provincia ?></td>
+
+</tr>
+<tr>
+         <th>Departamento</th>
+         <td><?php echo $cuentas->departamento ?></td>
+
+</tr>
+<tr>
+        <th>Localidad</th>
+        <td>   <?php echo $cuentas->localidad ?></td>
+
+
                                   <?php endforeach;?>
                   </tr>
                   </tbody>
@@ -106,14 +178,20 @@
 
 
 
-<div  class="bg-inverse text-white col-sm-8 offset-2">
-<h2 align="center">Caracteristicas de la cuenta</h2>
-</div>
+
 <div class="row">
-  <div class="col-sm-10 offset-2">
+  <div class="col-sm-10 ">
 
   <table class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
+  <th colspan="5">
+                                                            <h2>
+                                                                <center>
+                                                            <h2 align="center">Caracteristicas de la cuenta</h2>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
       <tr>
 
 
@@ -154,7 +232,7 @@
 
 
 <div class="row">
-<div class="col-sm-8 offset-2">
+<div class="col-sm-8 ">
 
         <div class="d-flex flex-row justify-content-center bg-inverse text-white">
  <div class="p-2" ><h3>Cuenta Creada Por:</h3></div>

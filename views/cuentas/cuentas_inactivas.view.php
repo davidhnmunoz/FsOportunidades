@@ -16,7 +16,21 @@
     echo '<meta http-equiv="refresh" content="4;url=../php/cuentas_inactivas.php">';
 }?></div>
 
-<div class="col-sm-10 offset-1">
+
+
+
+<?php
+if ($rcuentasin == false) {
+
+    echo ' <div class="col-sm-5 offset-3">
+                <div class="alert alert-success" role="alert">
+
+                    <strong>Felicidades! Usted no tiene cuentas Inactivas</strong>
+                </div>
+            <?php endif;?>
+            </div>';
+} else {
+    echo '<div class="col-sm-10 offset-1">
 
   <table class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
@@ -30,6 +44,12 @@
          <th colspan="3">Accion</th>
       </tr>
   </thead>
+';
+}
+
+?>
+
+
 
 
 <?php foreach ($rcuentasin as $cuentasin): ?>

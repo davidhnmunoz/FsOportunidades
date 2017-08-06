@@ -2,6 +2,7 @@
 
 
 
+
 <hr>
   <center><h1>Empleados Inactivos</h1></center>
 
@@ -20,7 +21,20 @@
  <div class="row">
 <div class="container" >
 
- <div class="col-sm-8 offset-3">
+
+<?php
+if ($rempleados == false) {
+
+    echo ' <div class="col-sm-5 offset-3">
+                <div class="alert alert-success" role="alert">
+
+                    <strong>Felicidades no hay empleados Inactivos</strong>
+                </div>
+            <?php endif;?>
+            </div>';
+} else {
+    echo '
+  <div class="col-sm-8 offset-3">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
@@ -33,6 +47,12 @@
          <th colspan="3">Accion</th>
       </tr>
       </thead>
+';
+}
+
+?>
+
+
 
 
 

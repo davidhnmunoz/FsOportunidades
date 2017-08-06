@@ -26,14 +26,14 @@
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
-         <th>Empresa</th>
-         <th>Telefono</th>
-         <th>Sitioweb</th>
-         <th>Cuit</th>
+         <th><center>Empresa</center></th>
+         <th><center>Telefono</center></th>
+         <th><center>Sitioweb</center></th>
+         <th><center>Cuit</center></th>
 
 
 
-         <th colspan="2">Accion</th>
+         <th colspan="2"><center>Accion</center></th>
       </tr>
       </thead>
 

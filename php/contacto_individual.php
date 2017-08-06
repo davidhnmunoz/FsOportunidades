@@ -18,6 +18,7 @@ JOIN empleados emp ON usu.id=emp.usuario_id
 
 
 
+
 WHERE con.id=$id");
 $rcontactos = $contactos->execute();
 $rcontactos = $contactos->fetchAll(PDO::FETCH_OBJ);

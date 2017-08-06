@@ -12,7 +12,7 @@ FROM cuentas cue
 
 
 WHERE cue.id=cue.id and estado=1  GROUP BY cue.id  ORDER BY nombreempresa ASC');
-$rcuentas = $cuentas->execute();
+$cuentas->execute();
 $rcuentas = $cuentas->fetchAll(PDO::FETCH_OBJ);
 
 require '../views/cuentas/index_cuenta.view.php';

@@ -10,6 +10,7 @@
   }
 </script>
 <script src="../assets/js/validar_cuit_cuenta_modificar.js"></script>
+<script src="../assets/js/validar_nombreempresa_modificar.js"></script>
 <br>
 <br>
 
@@ -47,8 +48,12 @@
   </div>
   <div class="col-sm-5">
   <label  for="inputEmail1"><strong>Nombre:</strong></label>
-    <input required="" type="text" name="nombreempresa" class="form-control" value="<?php echo $key->nombreempresa ?>" >
+    <input required="" type="text" name="nombreempresa" id="nombrecuenta" class="form-control" value="<?php echo $key->nombreempresa ?>" >
+      <span id="Infonombre">
+                            </span>
+                        </input>
   </div>
+
   <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Telefono:</strong></label>
     <input type="text" name="telefono" class="form-control" value="<?php echo $key->telefono ?>" >
@@ -62,7 +67,10 @@
   </div>
   <div class="col-sm-8">
   <label  for="inputEmail1"><strong>Descripcion:</strong></label>
-    <input type="text" name="descripcion" class="form-control" value="<?php echo $key->descripcion ?>">
+  <textarea required=""  class="form-control form-rounded" name="descripcion" rows="3" >
+    <?php echo $key->descripcion ?>
+  </textarea>
+
   </div>
 </div>
 
@@ -467,55 +475,10 @@ $rtsec = $tsec->fetchAll(PDO::FETCH_OBJ);
 
 
 
-<!-- Tablas Usuarios -->
-<?php
-$usuedit = $conexion->prepare("SELECT usu.id,usu.usuario
 
-FROM usuarios usu JOIN cuentas cue ON
-usu.id=cue.usuario_id
 
-WHERE cue.id=$id");
 
-$usuedit->execute();
-$rusuedit = $usuedit->fetchAll(PDO::FETCH_OBJ);
-
-?>
-
-<?php
-
-$conusu = $conexion->prepare('SELECT id,usuario FROM usuarios
-
-WHERE id>1');
-$conusu->execute();
-$rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
-?>
 <div class="form-group row">
-  <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
-
-
-<select required="" class="form-control" id="usuario_id" name="usuario_id">
-
-
-     <option value=""  required="" >Seleccione usuario</option>
-<?php foreach ($rusuedit as $usuedit): ?>
-<option selected="selected"  value="<?php echo $usuedit->id ?>"></a>
-
-<?php echo $usuedit->usuario ?>
-</option>
-<?php endforeach;?>
-
-
-
-
-     <?php foreach ($rconusu as $conusu): ?>
-                  <option value="<?php echo $conusu->id; ?>"></a>
-
-    <?php echo $conusu->usuario ?>
-                </option>
-                   <?php endforeach;?>
-</select>
-  </div>
 <?php foreach ($res as $key): ?>
 <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>

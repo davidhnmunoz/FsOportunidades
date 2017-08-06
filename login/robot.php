@@ -48,9 +48,14 @@ if (isset($_POST['enviar'])) {
 	 <label class="col-sm-2 col-form-label"><strong>Codigo:</strong></label>
 	</div>
 	<div class="col-sm-2 ">
+ <button type="button" class="btn  btn-primary active " >
 
-	 <label for="inputPassword" class="col-sm-2 col-form-label"><?php $ca = rand();
-echo $ca;?></label>
+  <?php $ca = rand();
+echo $ca;?>
+
+
+  </button>
+
 </div>
 
 	<div class="col-sm-4">

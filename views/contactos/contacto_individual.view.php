@@ -3,7 +3,7 @@
 
 
 <hr>
-  <center><h1>Informacion del contacto</h1></center>
+
 
  <div class="row">
 <div class="container" >
@@ -11,14 +11,23 @@
  <div class="col-sm-10 offset-1">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
+        <tr>
+                                                        <th colspan="6">
+                                                            <h2>
+                                                                <center>
+                                                          <center><h1>Informacion del contacto</h1></center>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
       <tr>
-         <th>Nombre</th>
-          <th>Cuenta</th>
-         <th>Email</th>
-         <th>Telefono</th>
+         <th><center>Nombre</center></th>
+          <th><center>Cuenta</center></th>
+         <th><center>Email</center></th>
+         <th><center>Telefono</center></th>
 
-        <th>Creado Por</th>
-         <th >Accion</th>
+        <th><center>Creado Por</center></th>
+         <th ><center>Accion</center></th>
       </tr>
       </thead>
 
@@ -49,10 +58,10 @@
 
 
 
-
                                     </tr>
                                     </tbody><?php endforeach;?>
       </table>
+
  </div>
  </div>
 </div>

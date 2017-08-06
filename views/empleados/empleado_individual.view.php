@@ -3,12 +3,7 @@
 <?php foreach ($rempleados as $empleados): ?>
   <div class="row">
  <div class="container">
-  <div class="bg-inverse text-white col-sm-8 offset-2">
 
-  <center><h2> <?php echo $empleados->nombre; ?>
-    <?php echo $empleados->apellido; ?>
-  </h2></center>
-  </div>
 
 <div class="row">
 
@@ -16,6 +11,18 @@
 
  <table  class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
+
+  <tr>
+                                                        <th colspan="7">
+                                                            <h2>
+                                                                <center>
+                                                                     <?php echo $empleados->nombre; ?>
+    <?php echo $empleados->apellido; ?>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+      <tr>
       <tr>
 
          <th>Cargo</th>
@@ -60,6 +67,16 @@
 
  <table  class="table table-bordered table-sm table-responsive">
   <thead class="thead-inverse">
+  <tr>
+                                                        <th colspan="4">
+                                                            <h2>
+                                                                <center>
+                                                                  Usuario
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+      <tr>
       <tr>
 
          <th>Usuario Asignado</th>
@@ -106,34 +123,56 @@
 <div class="row">
   <div class="col-sm-8 offset-2">
 
-<div  class="bg-inverse text-white">
-<h2 align="center">Direccion</h2>
-  </div>
+
 <table class="table table-bordered table-sm table-responsive">
 
 
 <thead class="thead-inverse">
 
-         <th>Direccion y Cod Postal</th>
-         <th>Provincia</th>
-         <th>Departamento</th>
-        <th>Localidad</th>
+
+  <tr>
+                                                        <th colspan="2">
+                                                            <h2>
+                                                                <center>
+                                                            <h2 align="center">Direccion</h2>
+                                                                </center>
+                                                            </h2>
+                                                        </th>
+                                                    </tr>
+
+
 </thead>
 
-                  <tbody>
+                  <tbody class="thead-inverse">
                   <tr>
 
-                                          <td><?php echo $empleados->CodPostal ?></td>
-                                            <td><?php echo $empleados->provincia ?></td>
-                                            <td><?php echo $empleados->departamento ?></td>
-                                            <td>   <?php echo $empleados->localidad ?></td>
+
+<tr>
+ <th>Direccion y Cod Postal</th>
+         <td><?php echo $empleados->CodPostal ?></td>
+
+</tr>
+<tr>
+         <th>Provincia</th>
+         <td><?php echo $empleados->provincia ?></td>
+
+</tr>
+<tr>
+         <th>Departamento</th>
+         <td><?php echo $empleados->departamento ?></td>
+
+</tr>
+<tr>
+        <th>Localidad</th>
+        <td>   <?php echo $empleados->localidad ?></td>
+
+
                                   <?php endforeach;?>
                   </tr>
                   </tbody>
 </table>
 </div>
 </div>
-
 
 
 

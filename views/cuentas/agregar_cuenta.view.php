@@ -21,10 +21,13 @@
 
 <script src="../assets/js/validar_id_cuenta.js"></script>
 <script src="../assets/js/validar_cuit.js"></script>
+<script src="../assets/js/validar_nombreempresa.js"></script>
 <script src="../assets/js/validar_id_direccion.js"></script>
+
 
 <br>
 <br>
+
 
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nueva Cuenta</h1>
 
@@ -57,7 +60,7 @@
 
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Cuit :</strong></label>
-    <input required="" type="text" name="cuit" id="cuitcuenta" class="form-control" placeholder="Cuit" onChange="ValidarCuit(this.value)">
+    <input pattern="\d{11}" title="El Cuit debe tener 11 digitos enteros ej: 30710316097" required="" type="text" name="cuit" id="cuitcuenta" class="form-control" placeholder="Cuit" onChange="ValidarCuit(this.value)">
     <span id="Infocuenta">
                             </span>
                         </input>
@@ -65,7 +68,10 @@
   </div>
   <div class="col-sm-3">
   <label  for="inputEmail1"><strong>Nombre:</strong></label>
-    <input required="" type="text" name="nombreempresa" class="form-control " placeholder="Nombre">
+    <input  required="" type="text" name="nombreempresa" id="nombrecuenta" class="form-control " placeholder="Nombre">
+      <span id="Infonombre">
+                            </span>
+                        </input>
   </div>
   <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Telefono:</strong></label>
@@ -103,14 +109,35 @@
 
 <!-- Errores cuit termina  -->
 
+<!-- Errores Empresa Empieza -->
+
+<?php if (!empty($errorempresa)): ?>
+            <div class="col-sm-3 offset-5">
+                <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+                    <?php echo $errorempresa ?>
+                </div>
+            </div>
+            <?php endif;?>
+        </div>
+
+
+
+
+<!-- Errores Empresa Termina -->
+
 <div class="form-group row">
   <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Sitio Web:</strong></label>
     <input required="" type="text" name="sitioweb" class="form-control" placeholder="Sitio Web">
   </div>
   <div class="col-sm-8">
+
   <label  for="inputEmail1"><strong>Descripcion:</strong></label>
-    <input required="" type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+   <textarea required="" class="form-control form-rounded" name="descripcion" rows="3" placeholder="Descripcion"></textarea>
+
   </div>
 </div>
 
@@ -301,30 +328,31 @@ $tsec->execute();
 
 
 <!-- Tablas Usuarios -->
-<?php
+<?php /*
 $conusu = $conexion->prepare('SELECT id,usuario FROM usuarios
 
 WHERE id>1');
 $conusu->execute();
-
-?>
-<div class="form-group row">
-  <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
+<div class="col-sm-4">
+<label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
 
 <label  for="inputEmail1"><strong>Usuario</strong></label>
 <select required  class="form-control chosen-select" id="usuario_id" name="usuario_id">
 
+<option value=""   >Seleccione usuario</option>
+<?php foreach ($conusu as $rconusu): ?>
+<option value="<?php echo $rconusu['id']; ?>"></a>
 
-     <option value=""   >Seleccione usuario</option>
-     <?php foreach ($conusu as $rconusu): ?>
-                  <option value="<?php echo $rconusu['id']; ?>"></a>
-
-    <?php echo $rconusu['usuario']; ?>
-                </option>
-                   <?php endforeach;?>
+<?php echo $rconusu['usuario']; ?>
+</option>
+<?php endforeach;?>
 </select>
-  </div>
+</div>
+
+ */
+?>
+<div class="form-group row">
+
 <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Fecha De Alta:</strong></label>
     <input required="" type="date"  name="fecha_alta" class="form-control" value="<?php echo date("Y-m-d"); ?>" >

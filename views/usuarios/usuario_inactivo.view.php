@@ -20,7 +20,18 @@
   </div>
  <div class="row">
 <div class="container" >
+<?php
+if ($rusuarios == false) {
 
+    echo ' <div class="col-sm-5 offset-3">
+                <div class="alert alert-success" role="alert">
+
+                    <strong>Felicidades no hay Usuarios Inactivos</strong>
+                </div>
+            <?php endif;?>
+            </div>';
+} else {
+    echo '
  <div class="col-sm-8 offset-3">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
@@ -33,7 +44,14 @@
           <th>Fecha De Baja</th>
          <th colspan="4"><center>Accion</center> </th>
       </tr>
-      </thead>
+      </thead>';
+}
+
+?>
+
+
+
+
 
 
 

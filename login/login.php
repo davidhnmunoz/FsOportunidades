@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['password']  = $password;
                 $_SESSION['rol']       = $rol;
                 $_SESSION['alta_pass'] = $alta_pass;
+
                 // var_dump($_SESSION['idusuario']);
                 // var_dump($_SESSION['usuario']);
                 // var_dump($_SESSION['rol']);
@@ -97,4 +98,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
 require 'views/login.view.php';

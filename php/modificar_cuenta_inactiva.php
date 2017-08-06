@@ -19,13 +19,13 @@ if (isset($_GET['id'])) {
 
 if (isset($_POST['modificar'])) {
 
+    $usuario_id    = $_SESSION['idusuario'];
     $idUsu         = $_POST["id"];
     $cuit          = $_POST["cuit"];
     $nombreempresa = $_POST["nombreempresa"];
     $telefono      = $_POST["telefono"];
     $sitioweb      = $_POST["sitioweb"];
     $descripcion   = $_POST["descripcion"];
-    $usuario_id    = $_POST["usuario_id"];
     $fecha_alta    = $_POST["fecha_alta"];
     $fecha_baja    = $_POST["fecha_baja"];
     /*Valor hacia  la tabla Origenes*/

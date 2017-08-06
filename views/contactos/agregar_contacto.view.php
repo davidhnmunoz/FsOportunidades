@@ -35,7 +35,7 @@
   </div>
   <div class="col-sm-4">
   <label  for="inputEmail1"><strong>Email:</strong></label>
-    <input required="" type="text" name="email" class="form-control" placeholder="email">
+    <input required="" type="email" name="email" class="form-control" placeholder="email">
   </div>
 </div>
 <div class="form-group row">
@@ -88,35 +88,7 @@ $rscuenta = $scuenta->fetchAll(PDO::FETCH_OBJ);
 
 
 
-<!-- Tablas Usuarios -->
-<?php
-$conusu = $conexion->prepare('SELECT id,usuario FROM usuarios
 
-WHERE id>1');
-$conusu->execute();
-
-$rconusu = $conusu->fetchAll(PDO::FETCH_OBJ);
-
-?>
-<div class="form-group row">
-  <div class="col-sm-4">
-  <label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
-
-
-<select required  class="form-control" id="usuario_id" name="usuario_id">
-
-
-     <option value=""   >Seleccione usuario</option>
-     <?php foreach ($rconusu as $conusu): ?>
-                  <option value="<?php echo $conusu->id ?>"></a>
-
-    <?php echo $conusu->usuario ?>
-                </option>
-                   <?php endforeach;?>
-</select>
-  </div>
-</div>
-<!-- Fin Tabla Usuarios -->
 
 
 

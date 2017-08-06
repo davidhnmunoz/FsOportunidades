@@ -7,13 +7,14 @@ $enviado = '';
 $enviar  = '';
 if (isset($_POST['agregar'])) {
 
+    $usuario_id = $_SESSION['idusuario'];
     $cuenta_id  = $_POST['cuenta_id'];
-    $usuario_id = $_POST['usuario_id'];
-    $nombre     = $_POST['nombre'];
-    $apellido   = $_POST['apellido'];
-    $email      = $_POST['email'];
-    $telefono   = $_POST['telefono'];
-    $estado     = 1;
+
+    $nombre   = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $email    = $_POST['email'];
+    $telefono = $_POST['telefono'];
+    $estado   = 1;
 
     /*Insert A Tabla cuentas*/
     $sql = $conexion->prepare('INSERT INTO contactos (cuenta_id , usuario_id , nombre , apellido,email,telefono,estado)

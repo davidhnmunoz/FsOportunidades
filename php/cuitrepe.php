@@ -17,7 +17,7 @@
 <div class="row">
 
 	<div class="alert alert-danger text-center col-sm-8 offset-2">
-		<h1>Atención! cuit repetido seleccione, la cuenta e intentelo Nuevamente</h1>
+		<h1>Atención! Cuit O Nombre De cuenta Erroneos  seleccione, la cuenta e intentelo Nuevamente</h1>
 	</div>
 	<div class="col-sm-4 offset-5">
 		<a href="index_cuenta.php" class="btn btn-outline-primary"><i class="fa fa-undo fa-spin fa-2x fa-fw"></i>  Volver a Cuentas</a>

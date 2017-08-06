@@ -23,13 +23,13 @@ if (isset($_GET['id'])) {
 
 if (isset($_POST['modificar'])) {
 
+    $usuario_id    = $_SESSION['idusuario'];
     $idUsu         = $_POST["id"];
     $cuit          = $_POST["cuit"];
     $nombreempresa = $_POST["nombreempresa"];
     $telefono      = $_POST["telefono"];
     $sitioweb      = $_POST["sitioweb"];
     $descripcion   = $_POST["descripcion"];
-    $usuario_id    = $_POST["usuario_id"];
     $fecha_alta    = $_POST["fecha_alta"];
     /*Valor hacia  la tabla Origenes*/
     $tiorigen = $_POST["tiorigen"];
@@ -48,24 +48,26 @@ if (isset($_POST['modificar'])) {
     $localidad    = $_POST["localidad"];
     $direccion    = $_POST["direccion"];
 
+    /*Comprobacion Nombre Cuenta*/
+
 /*Comprobacion de Cuit*/
-    $updatecuit = $conexion->prepare("UPDATE cuentas SET  cuit=:cuit WHERE id=:idUsu");
+    $updatecuit = $conexion->prepare("UPDATE cuentas SET  cuit=:cuit, nombreempresa=:nombreempresa WHERE id=:idUsu");
 
     if ($updatecuit->execute(array(":idUsu" => $idUsu,
-        ":cuit"                                 => $cuit))) {
+        ":cuit"                                 => $cuit,
+        ":nombreempresa"                        => $nombreempresa))) {
 
-        $sql       = "UPDATE cuentas SET nombreempresa=:nombreempresa , telefono=:telefono ,sitioweb=:sitioweb,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta  WHERE id=:idUsu";
+        $sql       = "UPDATE cuentas SET telefono=:telefono ,sitioweb=:sitioweb,descripcion=:descripcion,direccion_id=:direccion_id, usuario_id=:usuario_id,fecha_alta=:fecha_alta  WHERE id=:idUsu";
         $resultado = $conexion->prepare($sql);
         $resultado->execute(array(
-            ":idUsu"         => $idUsu,
-            ":nombreempresa" => $nombreempresa,
-            ":telefono"      => $telefono,
-            ":sitioweb"      => $sitioweb,
-            ":descripcion"   => $descripcion,
-            ":direccion_id"  => $direccion_id,
-            ":usuario_id"    => $usuario_id,
-            ":fecha_alta"    => $fecha_alta));
-        /*Insert a tabla direcciones
+            ":idUsu"        => $idUsu,
+            ":telefono"     => $telefono,
+            ":sitioweb"     => $sitioweb,
+            ":descripcion"  => $descripcion,
+            ":direccion_id" => $direccion_id,
+            ":usuario_id"   => $usuario_id,
+            ":fecha_alta"   => $fecha_alta));
+        /*Update a tabla direcciones
          */
 
         $query      = "UPDATE  direcciones SET provincia_id=:provincia ,departamento_id=:departamento, localidad_id=:localidad ,CodPostal=:direccion WHERE id=$direccion_id";
@@ -117,6 +119,7 @@ if (isset($_POST['modificar'])) {
         $resultado5->execute(array(":tisec" => $tisec));
 
         header('location:index_cuenta.php?exito');
+
     } else {
         header('location:cuitrepe.php');
 

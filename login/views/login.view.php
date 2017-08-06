@@ -16,6 +16,7 @@
             </link>
         </meta>
     </head>
+
     <body>
         <div class="formu">
             <!-- PHP SELF SIRVE PARA HACER UNA CARGA DE LA PROPIA PAGINA -->
