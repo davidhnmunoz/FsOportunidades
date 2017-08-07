@@ -2,6 +2,7 @@
 
 
 
+
 <hr>
   <center><h1>Empleados Activos</h1></center>
 
@@ -19,8 +20,31 @@
   </div>
  <div class="row">
 <div class="container" >
+<div class="col-sm-10 offset-2">
 
- <div class="col-sm-8 offset-3">
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/index_empleados.php">
+                                            Empleados activos
+                                        </a>
+
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/agregar_empleado.php">
+                                            Agregar Empleado
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/empleado_inactivo.php">
+                                            Empleados Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
+
+
+ <div class="col-sm-8 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>
@@ -31,6 +55,7 @@
          <th>interno</th>
 
          <th colspan="2">Accion</th>
+
       </tr>
       </thead>
 

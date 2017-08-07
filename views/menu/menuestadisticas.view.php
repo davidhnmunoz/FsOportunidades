@@ -10,7 +10,7 @@
 
                     <ul class="navbar-nav nav nav-pills nav-fill">
                      <li class="nav-item">
-    <a class="nav-link active" href="../index.php">HOME</a>
+    <a class="nav-link" href="../index.php">HOME</a>
   </li>
 
 
@@ -61,7 +61,7 @@
 
                                     <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_oportunidades.php">
+                                    <a class="nav-link" href="../php/index.php">
                                             Oportunidades
                                         </a>
 
@@ -73,26 +73,14 @@
                             <!-- Estadisticas -->
                            <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_estadisticas.php">
+                                    <a class="nav-link active" href="../php/index_estadisticas.php">
                                             Estadisticas
                                         </a>
 
                                         </li>
                             <!-- Fin estadisticas -->
                             <li class="nav-item ">
-                                <!-- BUSCAR -->
-                                <form class="form-inline my-2 my-lg-0">
-                                    <div class="input-group-addon">
-                                        <a href="../php/busqueda_oportunidad.ajax.php">
-                                            <i aria-hidden="true" class="fa fa-search fa-lg">
-                                            </i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-primary" href="../php/busqueda_oportunidad.ajax.php" name="buscar">
-                                        Buscar Oportunidad
-                                    </a>
-                                </form>
-                            </li>
+
                             <!-- PERFIL -->
                             <li class="nav-item dropdown navbar-toggler-right active">
 
@@ -135,7 +123,7 @@
                 <!-- USUARIO -->
 
 <?php else: ?>
-           <header>
+            <header>
             <div class="container">
                 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
                     <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
@@ -145,7 +133,7 @@
 
                     <ul class="navbar-nav nav nav-pills nav-fill">
                      <li class="nav-item">
-    <a class="nav-link active" href="../index.php">HOME</a>
+    <a class="nav-link" href="../index.php">HOME</a>
   </li>
 
 
@@ -178,7 +166,7 @@
 
                                     <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_oportunidades.php">
+                                    <a class="nav-link" href="../php/index.php">
                                             Oportunidades
                                         </a>
 
@@ -190,26 +178,14 @@
                             <!-- Estadisticas -->
                            <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_estadisticas.php">
+                                    <a class="nav-link active" href="../php/index_estadisticas.php">
                                             Estadisticas
                                         </a>
 
                                         </li>
                             <!-- Fin estadisticas -->
                             <li class="nav-item ">
-                                <!-- BUSCAR -->
-                                <form class="form-inline my-2 my-lg-0">
-                                    <div class="input-group-addon">
-                                        <a href="../php/busqueda_oportunidad.ajax.php">
-                                            <i aria-hidden="true" class="fa fa-search fa-lg">
-                                            </i>
-                                        </a>
-                                    </div>
-                                    <a class="btn btn-primary" href="../php/busqueda_oportunidad.ajax.php" name="buscar">
-                                        Buscar Oportunidad
-                                    </a>
-                                </form>
-                            </li>
+
                             <!-- PERFIL -->
                             <li class="nav-item dropdown navbar-toggler-right active">
 
@@ -246,6 +222,5 @@
                     </ul>
                 </nav>
                 </div>
-
 
 <?php endif?>

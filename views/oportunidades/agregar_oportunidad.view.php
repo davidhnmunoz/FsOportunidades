@@ -1,5 +1,6 @@
 
-<?php include '../views/menu/menuprincipal.view.php';?>
+<?php include '../views/menu/menuoportunidades.view.php';?>
+<body>
 <script>
   function ValidarIdopor(numero){
     if (!/^([0-9])*$/.test(numero))
@@ -42,15 +43,39 @@
 <script src="../assets/js/selectcuentas.js"></script>
 <script src="../assets/js/select_area.js"></script>
 
+<div class="row">
 
-
-<br>
-<br>
-
-<h1 align="center"><i class= "text-primary fa fa-handshake-o fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nueva Oportunidad</h1>
-
+<div class="container">
 <hr>
 
+<h1 align="center"><i class= "text-primary fa fa-handshake-o fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nueva Oportunidad</h1>
+<br>
+   <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " href="../php/index_oportunidades.php">Mis oportinidades Abiertas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/agregar_oportunidad.php">Agregar Oportunidad</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/oportunidades_abiertas.php">Oportunidades Abiertas</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="../php/oportunidades_cerradas.php">Oportunidades Cerradas</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="../php/oportunidades_ganadas.php">Oportunidades Ganadas</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="../php/oportunidades_perdidas.php">Oportunidades Perdidas</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="../php/oportunidades_postergadas.php">Oportunidades Postergadas</a>
+  </li>
+
+</ul>
+
+<br>
 <div class="offset-11 col-sm-1">
 <a href="../php/index.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
@@ -231,7 +256,7 @@ $tare->execute();
     <input required="" type="date"  name="fecha_cierre" class="form-control" value="<?php echo date("Y-m-d"); ?>" >
   </div>
 </div>
-</div>
+
 
 
 
@@ -248,7 +273,8 @@ $tare->execute();
 
 ?>
 </form>
-
+</div>
+</div>
 
             <?php if (!empty($enviar)): ?>
             <div class="enviar bg-success">
@@ -260,7 +286,6 @@ $tare->execute();
 
 
 
-<hr>
 
 </body>
 </html>

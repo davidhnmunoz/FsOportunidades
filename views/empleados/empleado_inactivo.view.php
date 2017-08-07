@@ -3,6 +3,7 @@
 
 
 
+
 <hr>
   <center><h1>Empleados Inactivos</h1></center>
 
@@ -20,12 +21,32 @@
   </div>
  <div class="row">
 <div class="container" >
+<div class="col-sm-10 offset-1">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_empleados.php">
+                                            Empleados activos
+                                        </a>
 
 
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/agregar_empleado.php">
+                                            Agregar Empleado
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link   active bg-primary text-white " href="../php/empleado_inactivo.php">
+                                            Empleados Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
 <?php
 if ($rempleados == false) {
 
-    echo ' <div class="col-sm-5 offset-3">
+    echo ' <div class="col-sm-5 offset-2">
                 <div class="alert alert-success" role="alert">
 
                     <strong>Felicidades no hay empleados Inactivos</strong>
@@ -34,7 +55,7 @@ if ($rempleados == false) {
             </div>';
 } else {
     echo '
-  <div class="col-sm-8 offset-3">
+  <div class="col-sm-8 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>

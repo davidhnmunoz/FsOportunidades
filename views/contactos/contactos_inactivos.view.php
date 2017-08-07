@@ -6,6 +6,27 @@ require '../views/menu/menucontactos_inactivo.view.php';
 
 <hr>
   <center><h1>Contactos Inactivos</h1></center>
+  <br>
+  <div class="col-sm-7 offset-2">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_contactos.php">
+                                    Contacto Activos
+                                </a>
+
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/agregar_contacto.php">Agregar contacto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white " href="../php/contactos_inactivos.php">
+                                    Contacto Inactivos</a>
+  </li>
+</div>
+<br>
+
 
 <div class="row">
 <div class="col-md-3"></div>

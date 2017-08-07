@@ -24,22 +24,35 @@
 <script src="../assets/js/validar_nombreempresa.js"></script>
 <script src="../assets/js/validar_id_direccion.js"></script>
 
-
-<br>
-<br>
+<hr>
 
 
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nueva Cuenta</h1>
 
-<hr>
 
+<div class="col-sm-7 offset-2">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_cuenta.php">Cuentas Activas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/agregar_cuenta.php">Agregar Cuenta</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/cuentas_inactivas.php">Cuentas inactivas</a>
+  </li>
+  </ul>
+</div>
+<br>
 <div class="offset-10 col-sm-1">
 <a href="../php/index_cuenta.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
 </div>
 <form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
 <div class="form-group row">
-<div class="col-sm-12">
+
+ <div class="col-sm-10 offset-1">
  <?php if (!empty($enviado)): ?>
 <div class="col-sm-8 offset-2">
             <div class="alert alert-success">
@@ -327,30 +340,6 @@ $tsec->execute();
 <!-- Fin tablas Satelites -->
 
 
-<!-- Tablas Usuarios -->
-<?php /*
-$conusu = $conexion->prepare('SELECT id,usuario FROM usuarios
-
-WHERE id>1');
-$conusu->execute();
-<div class="col-sm-4">
-<label  for="inputEmail1"><strong>Usuario del Sistema</strong></label>
-
-<label  for="inputEmail1"><strong>Usuario</strong></label>
-<select required  class="form-control chosen-select" id="usuario_id" name="usuario_id">
-
-<option value=""   >Seleccione usuario</option>
-<?php foreach ($conusu as $rconusu): ?>
-<option value="<?php echo $rconusu['id']; ?>"></a>
-
-<?php echo $rconusu['usuario']; ?>
-</option>
-<?php endforeach;?>
-</select>
-</div>
-
- */
-?>
 <div class="form-group row">
 
 <div class="col-sm-4">
@@ -370,18 +359,9 @@ $conusu->execute();
       </div>
   </div>
 
-  <?php
-/*
-?>
-<?php if (!empty($enviado)): ?>
-<div class="col-sm-8 offset-2">
-<div class="alert alert-success">
-<?php echo $enviado; ?>
-</div>
-<?php endif;?>
- */
-?>
+
 </form>
+
 
 
             <?php if (!empty($enviar)): ?>

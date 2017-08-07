@@ -12,22 +12,43 @@
   }
 </script>
 
-<br>
-<br>
-
+<hr>
 
 
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nuevo Usuario</h1>
+<br>
+<div class="col-sm-8 offset-2">
 
-<hr>
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " href="../php/index_usuarios.php">
+                                            Usuarios Activos
+                                        </a>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/agregar_usuario.php">
+                                            Agregar Usuario
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/usuario_inactivo.php">
+                                            Usuarios Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
+
+
 
 <div class="offset-10 col-sm-1">
+
 <a href="../php/index_usuarios.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
 </div>
 <form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form" onSubmit="return validarPass();">
 <div class="form-group row">
-<div class="col-sm-12">
+<div class="col-sm-8 offset-2">
  <?php if (!empty($enviado)): ?>
 <div class="col-sm-8 offset-2">
             <div class="alert alert-success">

@@ -23,7 +23,7 @@ JOIN tipos_estado testo ON esto.tipos_estado_id=testo.id
 
 WHERE testo.id=3 order by opu.fecha_cierre asc");
 $oportunidades->execute();
-$roportunidades = $oportunidades->execute();
+
 $roportunidades = $oportunidades->fetchAll(PDO::FETCH_OBJ);
 
 require '../views/oportunidades/oportunidades_ganadas.view.php';

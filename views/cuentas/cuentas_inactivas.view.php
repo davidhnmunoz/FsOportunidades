@@ -5,6 +5,21 @@
 
   <center><h1>Cuentas Inactivas</h1></center>
 
+<div class="col-sm-7 offset-1">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_cuenta.php">Cuentas Activas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/agregar_cuenta.php">Agregar Cuenta</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/cuentas_inactivas.php">Cuentas inactivas</a>
+  </li>
+</div>
+<br>
+
 <div class="col-md-4"></div>
 <div class="col-md-6 offset-2"><?php if (isset($_GET['exitoinactivas'])) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">

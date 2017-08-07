@@ -20,6 +20,32 @@
   </div>
  <div class="row">
 <div class="container" >
+
+<br>
+<div class="col-sm-8 offset-2">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " href="../php/index_usuarios.php">
+                                            Usuarios Activos
+                                        </a>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/agregar_usuario.php">
+                                            Agregar Usuario
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white " href="../php/usuario_inactivo.php">
+                                            Usuarios Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
+
+
+
 <?php
 if ($rusuarios == false) {
 

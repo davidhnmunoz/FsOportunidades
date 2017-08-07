@@ -8,6 +8,7 @@
 
 
 <div class="row">
+
 <div class="col-md-3"></div>
 <div class="col-md-5"><?php if (isset($_GET['exito'])) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -21,6 +22,23 @@
   </div>
  <div class="row">
 <div class="container" >
+<div class="col-sm-7 offset-1">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/index_cuenta.php">Cuentas Activas</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/agregar_cuenta.php">Agregar Cuenta</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/cuentas_inactivas.php">Cuentas inactivas</a>
+  </li>
+</div>
+
+
+
+</ul>
 
  <div class="col-sm-10 offset-1">
       <table class="table table-bordered  table-sm table-responsive">

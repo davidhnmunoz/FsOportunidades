@@ -20,7 +20,7 @@
                             <!-- Cuentas -->
                             <li class="nav-item">
 
-                                    <a class="nav-link " href="../php/index_cuenta.php">
+                                    <a class="nav-link" href="../php/index_cuenta.php">
                                         Cuentas
                                     </a>
 
@@ -30,7 +30,7 @@
 
                              <li class="nav-item ">
 
-                                    <a class="nav-link active" href="../php/index_contactos.php">
+                                    <a class="nav-link" href="../php/index_contactos.php">
                                         Contactos
                                     </a>
                                     </li>
@@ -61,7 +61,7 @@
 
                                     <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_oportunidades.php">
+                                    <a class="nav-link active" href="../php/index_oportunidades.php">
                                             Oportunidades
                                         </a>
 
@@ -83,53 +83,59 @@
                                 <!-- BUSCAR -->
                                 <form class="form-inline my-2 my-lg-0">
                                     <div class="input-group-addon">
-                                        <a href="../php/busqueda_contacto_activo.ajax.php">
+                                        <a href="../php/busqueda_oportunidad.ajax.php">
                                             <i aria-hidden="true" class="fa fa-search fa-lg">
                                             </i>
                                         </a>
                                     </div>
-                                    <a class="btn btn-primary" href="../php/busqueda_contacto_activo.ajax.php" name="buscar">
-                                        Buscar Contactos
+                                    <a class="btn btn-primary" href="../php/busqueda_oportunidad.ajax.php" name="buscar">
+                                        Buscar Oportunidad
                                     </a>
                                 </form>
                             </li>
-                     <!-- PERFIL -->
-                    <li class="nav-item dropdown navbar-toggler-right active">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle animated bounceInDown" data-toggle="dropdown" href="config" id="navbarDropdownMenuLink">
-                            <span class="usu">
-                                <i class="fa fa-user">
-                                </i>
-                            </span>
-                            <?php if (isset($_SESSION['usuario'])): ?>
-                            <?php endif;?>
-                            <?php echo ucwords($_SESSION['usuario']); ?>
-                        </a>
-                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                            <a class="dropdown-item" href="../php/perfil_usuario.php">
-                                Perfil
-                                <i class="fa fa-user-circle">
-                                </i>
-                            </a>
-                            <a class="dropdown-item" href="../php/cambio_pass.php">
-                                Cambiar Contraseña
-                                <i class="fa fa-key">
-                                </i>
-                            </a>
-                            <a class="dropdown-item" href="../php/cerrar.php">
-                                Cerrar Sesión
-                                <i class="fa fa-close">
-                                </i>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-<?php else: ?>
+                            <!-- PERFIL -->
+                            <li class="nav-item dropdown navbar-toggler-right active">
 
-<header>
+                              <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle animated bounceInDown" data-toggle="dropdown" href="config" id="navbarDropdownMenuLink">
+                    <span class="usu">
+                        <i class="fa fa-user">
+                        </i>
+                    </span>
+                    <?php if (isset($_SESSION['usuario'])): ?>
+                                    <?php endif;?>
+                                    <?php echo ucwords($_SESSION['usuario']); ?>
+                </a>
+
+
+
+                                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                                    <a class="dropdown-item" href="../php/perfil_usuario.php">
+                                        Perfil
+                                        <i class="fa fa-user-circle"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="../php/cambio_pass.php">
+                                        Cambiar Contraseña
+                                        <i class="fa fa-key">
+                        </i>
+                                    </a>
+                                    <a class="dropdown-item" href="../php/cerrar.php">
+                                        Cerrar Sesión
+                                        <i class="fa fa-close">
+                                             </i>
+                                    </a>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+                </div>
+
+
+
+                <!-- USUARIO -->
+
+<?php else: ?>
+           <header>
             <div class="container">
                 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
                     <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
@@ -149,7 +155,7 @@
                             <!-- Cuentas -->
                             <li class="nav-item">
 
-                                    <a class="nav-link " href="../php/index_cuenta.php">
+                                    <a class="nav-link" href="../php/index_cuenta.php">
                                         Cuentas
                                     </a>
 
@@ -159,7 +165,7 @@
 
                              <li class="nav-item ">
 
-                                    <a class="nav-link active" href="../php/index_contactos.php">
+                                    <a class="nav-link" href="../php/index_contactos.php">
                                         Contactos
                                     </a>
                                     </li>
@@ -172,7 +178,7 @@
 
                                     <li class="nav-item ">
 
-                                    <a class="nav-link" href="../php/index_oportunidades.php">
+                                    <a class="nav-link active" href="../php/index_oportunidades.php">
                                             Oportunidades
                                         </a>
 
@@ -194,48 +200,54 @@
                                 <!-- BUSCAR -->
                                 <form class="form-inline my-2 my-lg-0">
                                     <div class="input-group-addon">
-                                        <a href="../php/busqueda_contacto_activo.ajax.php">
+                                        <a href="../php/busqueda_oportunidad.ajax.php">
                                             <i aria-hidden="true" class="fa fa-search fa-lg">
                                             </i>
                                         </a>
                                     </div>
-                                    <a class="btn btn-primary" href="../php/busqueda_contacto_activo.ajax.php" name="buscar">
-                                        Buscar Contactos
+                                    <a class="btn btn-primary" href="../php/busqueda_oportunidad.ajax.php" name="buscar">
+                                        Buscar Oportunidad
                                     </a>
                                 </form>
                             </li>
-                     <!-- PERFIL -->
-                    <li class="nav-item dropdown navbar-toggler-right active">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle animated bounceInDown" data-toggle="dropdown" href="config" id="navbarDropdownMenuLink">
-                            <span class="usu">
-                                <i class="fa fa-user">
-                                </i>
-                            </span>
-                            <?php if (isset($_SESSION['usuario'])): ?>
-                            <?php endif;?>
-                            <?php echo ucwords($_SESSION['usuario']); ?>
-                        </a>
-                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                            <a class="dropdown-item" href="../php/perfil_usuario.php">
-                                Perfil
-                                <i class="fa fa-user-circle">
-                                </i>
-                            </a>
-                            <a class="dropdown-item" href="../php/cambio_pass.php">
-                                Cambiar Contraseña
-                                <i class="fa fa-key">
-                                </i>
-                            </a>
-                            <a class="dropdown-item" href="../php/cerrar.php">
-                                Cerrar Sesión
-                                <i class="fa fa-close">
-                                </i>
-                            </a>
+                            <!-- PERFIL -->
+                            <li class="nav-item dropdown navbar-toggler-right active">
+
+                              <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle animated bounceInDown" data-toggle="dropdown" href="config" id="navbarDropdownMenuLink">
+                    <span class="usu">
+                        <i class="fa fa-user">
+                        </i>
+                    </span>
+                    <?php if (isset($_SESSION['usuario'])): ?>
+                                    <?php endif;?>
+                                    <?php echo ucwords($_SESSION['usuario']); ?>
+                </a>
+
+
+
+                                <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                                    <a class="dropdown-item" href="../php/perfil_usuario.php">
+                                        Perfil
+                                        <i class="fa fa-user-circle"></i>
+                                    </a>
+                                    <a class="dropdown-item" href="../php/cambio_pass.php">
+                                        Cambiar Contraseña
+                                        <i class="fa fa-key">
+                        </i>
+                                    </a>
+                                    <a class="dropdown-item" href="../php/cerrar.php">
+                                        Cerrar Sesión
+                                        <i class="fa fa-close">
+                                             </i>
+                                    </a>
+                                </div>
+                            </li>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+                    </ul>
+                </nav>
+                </div>
+
+
+
+
 <?php endif?>

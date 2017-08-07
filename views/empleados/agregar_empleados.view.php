@@ -8,21 +8,42 @@
 </script>
 <script src="../assets/js/validar_id_direccion.js"></script>
 
-<br>
-<br>
+<hr>
 
 
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nuevo Empleado</h1>
 
-<hr>
 
+<div class="col-sm-7 offset-2">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_empleados.php">
+                                            Empleados activos
+                                        </a>
+
+
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white " href="../php/agregar_empleado.php">
+                                            Agregar Empleado
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/empleado_inactivo.php">
+                                            Empleados Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
 <div class="offset-10 col-sm-1">
 <a href="../php/index_empleados.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>
 </a>
 </div>
 <form class="form-comtrol formagregar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
 <div class="form-group row">
-<div class="col-sm-12">
+<div class="col-sm-10">
  <?php if (!empty($enviado)): ?>
 <div class="col-sm-8 offset-2">
             <div class="alert alert-success">

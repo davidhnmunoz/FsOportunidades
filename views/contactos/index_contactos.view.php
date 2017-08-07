@@ -19,7 +19,25 @@
   </div>
  <div class="row">
 <div class="container" >
+<div class="col-sm-7 offset-2">
 
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/index_contactos.php">
+                                    Contacto Activos
+                                </a>
+
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../php/agregar_contacto.php">Agregar contacto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/contactos_inactivos.php">
+                                    Contacto Inactivos</a>
+  </li>
+</div>
+<br>
  <div class="col-sm-10 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">

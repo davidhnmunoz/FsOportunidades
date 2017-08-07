@@ -2,6 +2,9 @@
 
 
 
+
+
+
 <hr>
   <center><h1>Usuarios Activos</h1></center>
 
@@ -28,8 +31,28 @@
   </div>
  <div class="row">
 <div class="container" >
+<div class="col-sm-8 offset-2">
 
- <div class="col-sm-8 offset-4">
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/index_usuarios.php">
+                                            Usuarios Activos
+                                        </a>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/agregar_usuario.php">
+                                            Agregar Usuario
+                                        </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/usuario_inactivo.php">
+                                            Usuarios Inactivos
+                                        </a>
+  </li>
+</div>
+<br>
+ <div class="col-sm-8 offset-2">
       <table class="table table-bordered  table-sm table-responsive">
       <thead class="thead-inverse">
       <tr>

@@ -2,13 +2,44 @@
 if (!isset($_SESSION['usuario'])) {
     header('location:../login/login.php');
 }
-include '../views/menu/menuprincipal.view.php';?>
-
+include '../views/menu/menuestadisticas.view.php';?>
 
 <hr>
 <h1 align="center"><i class= "text-success fa fa-usd fa-spin fa-lg fa-fw" aria-hidden="true">&nbsp;</i>Ingresos reales por mes </h1>
 <div class="row">
 <div class="container">
+<div class="col-sm-10">
+
+  <ul class="nav nav-tabs">
+
+
+
+<li class="nav-item">
+    <a class="nav-link  " href="../php/index_estadisticas.php">
+                                        Marcador de ventas
+                                    </a>
+
+
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link  " href="../php/cuentas_principales.ajax.php">
+                                        Cuentas Principales
+
+</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/oportunidades_ganadas_enproceso_perdidas.ajax.php">
+                                        En Proceso Ganadas y perdidas
+                                    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/ingresospormes.ajax.php">
+                                        Ingresos por mes
+                                    </a>
+  </li>
+  </ul>
+</div>
         <div class="caja col-sm-4">
             <select onChange="mostrarResultados(this.value);">
                 <?php
@@ -31,6 +62,7 @@ for ($i = 2014; $i < 2018; $i++) {
 
 
     $(document).ready(mostrarResultados(2017));
+
 
     function mostrarResultados(año) {
         $.ajax({

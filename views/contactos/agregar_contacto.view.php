@@ -1,12 +1,29 @@
 <?php include '../views/menu/menucontactos_activo.view.php';?>
 
-<br>
-<br>
-
+<hr>
 
 <h1 align="center"><i class="agregar fa fa-user-plus fa-lg" aria-hidden="true">&nbsp;</i>Agregar Nuevo Contacto</h1>
 
-<hr>
+
+<div class="col-sm-7 offset-2">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="../php/index_contactos.php">
+                                    Contacto Activos
+                                </a>
+
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active bg-primary text-white" href="../php/agregar_contacto.php">Agregar contacto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " href="../php/contactos_inactivos.php">
+                                    Contacto Inactivos</a>
+  </li>
+</div>
+<br>
 
 <div class="offset-10 col-sm-1">
 <a href="../php/index_contactos.php" onclick="return confirm('¿Desea Cancelar?')" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="cancelform fa fa-times-circle-o fa-4x" aria-hidden="true"></i></i>

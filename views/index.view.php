@@ -3,6 +3,9 @@
 
 
 
+<body>
+
+
 
 
 
@@ -12,6 +15,8 @@
 
   <div class="row">
   <div class="container">
+
+<br>
 
 <div class="col-md-6 offset-2"><?php if (isset($_GET['exito'])) {
     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -107,31 +112,31 @@ if ($roportunidades == false) {
 
                       <?php foreach ($roportunidades as $oportunidades): {
     }?>
-                                                                                              <tbody>
-                                                                                                   <tr>
-                                                                                                        <td><a href="oportunidad_individual.php?id=<?php echo $oportunidades->opu_id; ?>">
-                                                                                                                                        <?php echo $oportunidades->tema; ?></a></td>
-                                                                                                        <td><?php echo $oportunidades->area ?></td>
-                                                                                                        <td><a href="../php/cuenta_individual.php?id=<?php echo $oportunidades->cue_id; ?>">
-                                                                                                          <?php echo $oportunidades->nombreempresa; ?></a></td>
-                                                                                                        <td><a href="../php/contacto_individual.php?id=<?php echo $oportunidades->con_id; ?>">
-                                                                                                         <?php echo $oportunidades->nombre ?>,
-                                                                                                           <?php echo $oportunidades->apellido ?></a></td>
-                                                                                                        <td><?php echo $oportunidades->email ?></td>
-                                                                                                        <td><?php echo $oportunidades->telefono ?></td>
-                                                                                                        <td>
-                                                                                <a href="../php/modificar_oportunidad.php?id=<?php echo $oportunidades->opu_id ?>">
+                                                                                                                          <tbody>
+                                                                                                                               <tr>
+                                                                                                                                    <td><a href="oportunidad_individual.php?id=<?php echo $oportunidades->opu_id; ?>">
+                                                                                                                                                                    <?php echo $oportunidades->tema; ?></a></td>
+                                                                                                                                    <td><?php echo $oportunidades->area ?></td>
+                                                                                                                                    <td><a href="../php/cuenta_individual.php?id=<?php echo $oportunidades->cue_id; ?>">
+                                                                                                                                      <?php echo $oportunidades->nombreempresa; ?></a></td>
+                                                                                                                                    <td><a href="../php/contacto_individual.php?id=<?php echo $oportunidades->con_id; ?>">
+                                                                                                                                     <?php echo $oportunidades->nombre ?>,
+                                                                                                                                       <?php echo $oportunidades->apellido ?></a></td>
+                                                                                                                                    <td><?php echo $oportunidades->email ?></td>
+                                                                                                                                    <td><?php echo $oportunidades->telefono ?></td>
+                                                                                                                                    <td>
+                                                                                                            <a href="../php/modificar_oportunidad.php?id=<?php echo $oportunidades->opu_id ?>">
 
-                                                                                <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
-                                                                                <td>
-                                                                                   <a href="../php/eliminar_oportunidad.php?id=<?php echo $oportunidades->opu_id ?>"onclick="return confirm('¿Desea eliminar la oportunidad permanentemente?')">
+                                                                                                            <i class="editar fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                                                                                                            <td>
+                                                                                                               <a href="../php/eliminar_oportunidad.php?id=<?php echo $oportunidades->opu_id ?>"onclick="return confirm('¿Desea eliminar la oportunidad permanentemente?')">
 
-                                                                                <i class="eliminar fa fa-trash fa-2x" aria-hidden="true"></i></a>
-                                                                                </td>
+                                                                                                            <i class="eliminar fa fa-trash fa-2x" aria-hidden="true"></i></a>
+                                                                                                            </td>
 
 
-                                                                                                  </tr>
-                                                                                             </tbody><?php endforeach;?>
+                                                                                                                              </tr>
+                                                                                                                         </tbody><?php endforeach;?>
         </table>
         </div>
       </div>
